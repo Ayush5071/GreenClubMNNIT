@@ -1,5 +1,9 @@
+import { InfiniteMovingCardsDemo } from "@/Components/testComponent";
+
 export default function Home() {
-  return (
-    <div className="">Home Page</div>
+    return (
+    <div className="">
+      {/* <InfiniteMovingCardsDemo /> */}
+    </div>
   );
 }

@@ -1,9 +1,9 @@
-import { InfiniteMovingCardsDemo } from "@/Components/testComponent";
+import OurTeam from "@/Components/sections/OurTeam";
 
 export default function Home() {
     return (
     <div className="">
-      {/* <InfiniteMovingCardsDemo /> */}
+      <OurTeam/>      
     </div>
   );
 }

@@ -1,6 +1,7 @@
 "use client";
 
 import { cn } from "@/lib/utils";
+import Image from "next/image";
 import React, { useEffect, useState } from "react";
 
 export const InfiniteMovingCards = ({
@@ -73,7 +74,7 @@ export const InfiniteMovingCards = ({
     <div
       ref={containerRef}
       className={cn(
-        "scroller relative z-20  w-full overflow-hidden  [mask-image:linear-gradient(to_right,transparent,white_30%,white_90%,transparent)]",
+        "scroller relative z-20  w-full overflow-hidden bg-slate-800  [mask-image:linear-gradient(to_right,transparent,white_30%,white_90%,transparent)]",
         className
       )}
     >
@@ -86,13 +87,21 @@ export const InfiniteMovingCards = ({
         )}
       >
         {items.map((item, idx) => (
-            <div key={idx} className="bg-slate-200 md:w-[27vw] h-[300px] flex p-5 ">
-                <div className="img w-[50%] h-full bg-black"></div>
-                <div className="data w-[50%] h-full flex flex-col justify-center items-center bg-slate-500">
-                    <h1 className="w-full flex items-center justify-center h-[30%]">
+            <div key={idx} className="bg-slate-500 text-white md:w-[27vw] h-[300px] flex p-5 m-5">
+                <Image
+              alt="image"
+              className={cn(
+                "h-full img w-[50%] object-cover ",
+              )}
+              width="1000"
+              height="1000"
+              src={"https://images.unsplash.com/photo-1663765970236-f2acfde22237?q=80&w=3542&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D0"}
+            />
+                <div className="data w-[50%] h-full flex flex-col justify-center items-center ">
+                    <h1 className="w-full flex items-center justify-center font-bold text-3xl h-[30%]">
                         <p className="">Ayush Tiwari</p>
                     </h1>
-                    <h3 className="w-full flex items-center flex-col justify-center h-[25%]">
+                    <h3 className="w-full flex items-center flex-col justify-center font-semibold text-xl h-[25%]">
                         <p className="">Web Team</p>
                         <p className="">second Year</p>
                     </h3>

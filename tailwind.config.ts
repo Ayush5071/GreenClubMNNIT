@@ -25,7 +25,7 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [addVariablesForColors],
 };
 
 function addVariablesForColors({ addBase, theme }: any) {

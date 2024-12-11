@@ -25,7 +25,7 @@ module.exports = {
       },
     },
   },
-  plugins: [addVariablesForColors,require('daisyui')],
+  plugins: [],
 };
 
 function addVariablesForColors({ addBase, theme }: any) {

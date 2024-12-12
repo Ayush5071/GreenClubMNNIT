@@ -7,3 +7,30 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+/* Glowing text effect */
+.text-shadow-glow {
+    text-shadow: 0 0 8px rgba(34, 197, 94, 0.8), 
+                 0 0 16px rgba(34, 197, 94, 0.6), 
+                 0 0 32px rgba(34, 197, 94, 0.5);
+  }
+  
+  /* Stroke effect */
+  .title-stroke {
+    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.6);
+    color: transparent;
+  }
+  
+  /* Hover glow for interactive elements */
+  .hover-glow:hover {
+    text-shadow: 0 0 12px rgba(34, 197, 94, 0.9), 
+                 0 0 20px rgba(34, 197, 94, 0.7);
+    transform: scale(1.05);
+    transition: all 0.3s ease-in-out;
+  }
+  
+  /* Smooth transitions */
+  .transition-all {
+    transition: all 0.3s ease-in-out;
+  }
+  

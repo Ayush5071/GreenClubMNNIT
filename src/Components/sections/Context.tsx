@@ -3,7 +3,7 @@ import Image from "next/image";
 const Context = () => {
   return (
     <div
-      className="w-full min-h-screen bg-zinc-950 bg-cover bg-center px-6 py-8"
+      className="w-full h-full bg-zinc-950 bg-cover bg-center px-6 py-8"
       style={{ backgroundImage: `url('/Elements/grid.png')` }} // Background image from public folder
     >
       <div className="w-full mb-12 text-center">
@@ -20,7 +20,7 @@ const Context = () => {
           </p>
         </div>
         {/* Image Section */}
-        <div className="w-full md:w-[45%] lg:w-[40%] h-64 md:h-80 lg:h-96 rounded-lg overflow-hidden shadow-lg relative">
+        <div className="w-full md:w-[45%] lg:w-[40%] h-64 md:h-96 lg:h-[28rem] border-white border-2 rounded-lg overflow-hidden shadow-lg relative">
           <Image
             src="/Elements/grid.png" // Path to the image in the public folder
             alt="Green Club Illustration"

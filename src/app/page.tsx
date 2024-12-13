@@ -4,6 +4,7 @@ import Contact from "@/Components/sections/Contact";
 import Context from "@/Components/sections/Context";
 import Footer from "@/Components/sections/Footer";
 import HeroPage from "@/Components/sections/HeroPage";
+import { Mission } from "@/Components/sections/Mission";
 import { Testimonials } from "@/Components/sections/Testimonials";
 import { FloatingNav } from "@/Components/ui/FloatingNav";
 import { navItems } from "@/lib/data/data";
@@ -14,6 +15,7 @@ export default function Home() {
       <HeroPage/>
       <Context/>
       <About/>
+      <Mission/>
       <Scroller/>
       <Testimonials/>
       <Contact/>

@@ -34,3 +34,11 @@
     transition: all 0.3s ease-in-out;
   }
   
+  .scrollbar-none {
+    scrollbar-width: none; /* For Firefox */
+    -ms-overflow-style: none; /* For Internet Explorer and Edge */
+  }
+  .scrollbar-none::-webkit-scrollbar {
+    display: none; /* For Chrome, Safari, and Opera */
+  }
+  

@@ -22,7 +22,7 @@ const Context = () => {
         {/* Image Section */}
         <div className="w-full md:w-[45%] lg:w-[40%] h-64 md:h-96 lg:h-[28rem] border-white border-2 rounded-lg overflow-hidden shadow-lg relative">
           <Image
-            src="/Elements/grid.png" // Path to the image in the public folder
+            src="/Images/About.webp" // Path to the image in the public folder
             alt="Green Club Illustration"
             layout="fill" // Ensures the image fills the parent container
             objectFit="cover" // Makes the image cover the container without distortion

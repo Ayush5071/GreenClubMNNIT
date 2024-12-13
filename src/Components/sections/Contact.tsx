@@ -41,10 +41,10 @@ const Contact = () => {
     <section className="bg-zinc-950 py-8 lg:py-16 px-4 mx-auto max-w-screen-md">
       <div className="bg-zinc-800 border-2 border-white rounded-2xl p-8 w-full shadow-xl">
         <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-center text-white">
-          Contact Us
+          Get in Touch with the Green Club
         </h2>
         <p className="mb-8 lg:mb-16 font-light text-center text-gray-400 sm:text-xl">
-          Got a technical issue? Want to send feedback about a beta feature? Need details about our Business plan? Let us know.
+          Have a question about our environmental initiatives? Want to collaborate on a green project? Share your thoughts or get involved in making a difference!
         </p>
         <form onSubmit={handleSubmit} className="space-y-8">
           <div>
@@ -76,7 +76,7 @@ const Contact = () => {
               id="subject"
               required
               className="block p-3 w-full text-sm text-white bg-zinc-900 rounded-lg border-2 border-white shadow-sm focus:ring-green-500 focus:border-green-500"
-              placeholder="Let us know how we can help you"
+              placeholder="Tell us why you're reaching out"
             />
           </div>
           <div>
@@ -93,7 +93,7 @@ const Contact = () => {
               onChange={(e) => setMessage(e.target.value)}
               required
               className="block p-2.5 w-full text-sm text-white bg-zinc-900 rounded-lg shadow-sm border-2 border-white focus:ring-green-500 focus:border-green-500"
-              placeholder="Leave a comment..."
+              placeholder="Tell us about your idea or question..."
             ></textarea>
           </div>
           <button

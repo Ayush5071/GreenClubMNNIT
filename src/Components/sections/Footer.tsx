@@ -46,26 +46,50 @@ function Footer() {
       <div className="w-full text-center space-y-2">
         <p className="text-sm font-medium text-gray-400">Follow Us</p>
         <div className="flex justify-center space-x-4 text-lg">
-          <a href="#" aria-label="Facebook" className="text-blue-500 hover:brightness-125">
+          <a
+            href="https://www.facebook.com/MNNITGreenClub/"
+            aria-label="Facebook"
+            className="text-blue-500 hover:brightness-125"
+          >
             <FontAwesomeIcon icon={faFacebook} size="lg" />
           </a>
-          <a href="#" aria-label="Instagram" className="text-pink-500 hover:brightness-125">
+          <a
+            href="https://www.instagram.com/greenclub_mnnit/"
+            aria-label="Instagram"
+            className="text-pink-500 hover:brightness-125"
+          >
             <FontAwesomeIcon icon={faInstagram} size="lg" />
           </a>
-          <a href="#" aria-label="Twitter" className="text-blue-400 hover:brightness-125">
+          <a
+            href="#"
+            aria-label="Twitter"
+            className="text-blue-400 hover:brightness-125"
+          >
             <FontAwesomeIcon icon={faTwitter} size="lg" />
           </a>
-          <a href="#" aria-label="LinkedIn" className="text-blue-600 hover:brightness-125">
+          <a
+            href="https://www.linkedin.com/company/mnnit-green-club/posts/?feedView=all"
+            aria-label="LinkedIn"
+            className="text-blue-600 hover:brightness-125"
+          >
             <FontAwesomeIcon icon={faLinkedin} size="lg" />
           </a>
         </div>
       </div>
       <div className="w-full text-center text-sm space-y-2 text-gray-500">
-        <p>
-          Address: 123 Green Lane, Eco City, Earth - 123456
-        </p>
-        <p>&copy; {new Date().getFullYear()} Green Club. All Rights Reserved.</p>
-      </div>
+  <p>
+    Address: Motilal Nehru National Institute of Technology Allahabad,
+    Prayagraj, Uttar Pradesh, India – 211004
+  </p>
+  <p>
+    &copy; {new Date().getFullYear()}{" "}
+    <a href="https://ayush-delta.vercel.app" className="text-blue-500 hover:underline">
+      Ayush Tiwari
+    </a>{" "}
+    x Green Club. All Rights Reserved.
+  </p>
+</div>
+
     </footer>
   );
 }

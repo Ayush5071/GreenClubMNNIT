@@ -5,52 +5,71 @@ import { StickyScroll } from "../ui/StickyScroll";
 
 const content = [
   {
-    title: "Collaborative Editing",
+    title: "Promoting Sustainability",
     description:
-      "Work together in real time with your team, clients, and stakeholders. Collaborate on documents, share ideas, and make decisions quickly. With our platform, you can streamline your workflow and increase productivity.",
+      "Our Green Club champions eco-friendly practices, inspiring individuals to make sustainable choices. Join us in creating a greener future by advocating for renewable energy, reducing waste, and protecting our planet.",
     content: (
-      <div className="h-full w-full bg-[linear-gradient(to_bottom_right,var(--cyan-500),var(--emerald-500))] flex items-center justify-center text-white">
-        Collaborative Editing
-      </div>
-    ),
-  },
-  {
-    title: "Real time changes",
-    description:
-      "See changes as they happen. With our platform, you can track every modification in real time. No more confusion about the latest version of your project. Say goodbye to the chaos of version control and embrace the simplicity of real-time updates.",
-    content: (
-      <div className="h-full w-full  flex items-center justify-center text-white">
+      <div className="h-full w-full flex items-center justify-center text-white">
         <Image
-          src="/linear.webp"
+          src="/Images/img8.webp"
           width={300}
           height={300}
           className="h-full w-full object-cover"
-          alt="linear board demo"
+          alt="Promoting Sustainability"
         />
       </div>
     ),
   },
   {
-    title: "Version control",
+    title: "Tree Plantation Drives",
     description:
-      "Experience real-time updates and never stress about version control again. Our platform ensures that you're always working on the most recent version of your project, eliminating the need for constant manual updates. Stay in the loop, keep your team aligned, and maintain the flow of your work without any interruptions.",
+      "Our Green Club actively organizes tree plantation drives to combat deforestation and improve air quality. Together, we contribute to restoring green cover and fostering biodiversity in our local communities.",
     content: (
-      <div className="h-full w-full bg-[linear-gradient(to_bottom_right,var(--orange-500),var(--yellow-500))] flex items-center justify-center text-white">
-        Version control
+      <div className="h-full w-full flex items-center justify-center text-white">
+        <Image
+          src="/Images/img1.webp"
+          width={300}
+          height={300}
+          className="h-full w-full object-cover"
+          alt="Tree Plantation Drives"
+        />
       </div>
     ),
   },
   {
-    title: "Running out of content",
+    title: "Spreading Environmental Awareness",
     description:
-      "Experience real-time updates and never stress about version control again. Our platform ensures that you're always working on the most recent version of your project, eliminating the need for constant manual updates. Stay in the loop, keep your team aligned, and maintain the flow of your work without any interruptions.",
+      "Through workshops, campaigns, and events, we aim to educate and inspire people about pressing environmental issues. Let's work together to make informed choices and prioritize our planet's well-being.",
     content: (
-      <div className="h-full w-full bg-[linear-gradient(to_bottom_right,var(--cyan-500),var(--emerald-500))] flex items-center justify-center text-white">
-        Running out of content
+      <div className="h-full w-full flex items-center justify-center text-white">
+        <Image
+          src="/Images/img3.webp"
+          width={300}
+          height={300}
+          className="h-full w-full object-cover"
+          alt="Spreading Environmental Awareness"
+        />
+      </div>
+    ),
+  },
+  {
+    title: "Waste Management Programs",
+    description:
+      "Our club encourages responsible waste management through recycling initiatives and clean-up drives. Every small effort leads to a bigger impact—join us in keeping our surroundings clean and green.",
+    content: (
+      <div className="h-full w-full flex items-center justify-center text-white">
+        <Image
+          src="/Images/img4.webp"
+          width={300}
+          height={300}
+          className="h-full w-full object-cover"
+          alt="Waste Management Programs"
+        />
       </div>
     ),
   },
 ];
+
 export function Mission() {
   return (
     <div className="py-10">

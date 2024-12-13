@@ -32,7 +32,7 @@ function Footer() {
           eco-friendly initiatives to build a sustainable future.
         </p>
         <p className="text-xs sm:text-sm text-green-400 font-bold">
-          "Small steps for nature can lead to giant leaps for the Earth."
+          Small steps for nature can lead to giant leaps for the Earth.
         </p>
       </div>
       <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 space-x-0 md:space-x-4">

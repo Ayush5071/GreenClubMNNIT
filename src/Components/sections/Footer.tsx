@@ -10,6 +10,8 @@ import {
 
 import { TypewriterEffectSmooth } from "../ui/Footer";
 
+import {toast} from "react-hot-toast"
+
 function Footer() {
   const words = [
     { text: "Plant Trees", className: "text-green-500" },
@@ -17,6 +19,10 @@ function Footer() {
     { text: "Support Wildlife", className: "text-yellow-400" },
     { text: "Go Green", className: "text-green-600" },
   ];
+
+  const handleclick = () => {
+    toast.success("No Openings for now");
+  }
 
   return (
     <footer className="flex flex-col items-center justify-center py-10 bg-zinc-950 text-white space-y-6">
@@ -36,11 +42,8 @@ function Footer() {
         </p>
       </div>
       <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 space-x-0 md:space-x-4">
-        <button className="w-40 h-10 rounded-xl bg-green-600 text-white text-sm shadow-lg hover:bg-green-700">
+        <button onClick={handleclick} className="w-40 h-10 rounded-xl bg-green-600 text-white text-sm shadow-lg hover:bg-green-700">
           Join Us
-        </button>
-        <button className="w-40 h-10 rounded-xl bg-white text-zinc-950 border border-green-600 text-sm shadow-lg hover:text-green-600">
-          Volunteer
         </button>
       </div>
       <div className="w-full text-center space-y-2">

@@ -3,21 +3,22 @@ import Image from "next/image";
 const Context = () => {
   return (
     <div
+    id="about"
       className="w-full h-full bg-zinc-950 bg-cover bg-center px-6 py-8"
       style={{ backgroundImage: `url('/Elements/grid.png')` }} 
     >
       <div className="w-full mb-12 text-center">
-        <h1 className="text-4xl md:text-5xl font-bold text-white">
+        <h1 className="text-4xl md:text-5xl font-bold font-bebas text-white">
           Inaugurated by Ram Nath Kovind, Ex-President of India
         </h1>
       </div>
-      <div className="flex flex-col md:flex-row items-center md:justify-between gap-8">
+      <div className="flex flex-col md:flex-row font-Sfpro items-center md:justify-between gap-8">
         {/* Content Section */}
         <div className="w-full md:w-[50%] text-white font-medium text-lg leading-relaxed">
           <p>
             The Green Club at MNNIT is dedicated to promoting sustainability and fostering environmental consciousness across the campus. Inaugurated by Ram Nath Kovind, the Ex-President of India, the club takes initiatives for various sustainable development practices, including tree plantation, water conservation, and animal care.
           </p>
-          <p className="mt-4">
+          <p className="mt-4 md:block hidden">
             Our efforts aim to reduce plastic usage by educating the community on alternatives and advocating for the installation of more dustbins throughout the campus. Additionally, we have initiated several programs that care for stray animals, providing water for their survival, and plant pots around the campus for a greener and healthier environment.
           </p>
           <p className="mt-4">

@@ -20,7 +20,7 @@ const SecondYear = () => {
               name={student.name}
               year={2}
               imageUrl={student.drive} 
-              LinkedIn={student.linkedIn} 
+              LinkedIn={student.linkedin} 
               Instagram={student.instagram} 
             />
           ))

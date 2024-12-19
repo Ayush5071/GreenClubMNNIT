@@ -23,6 +23,7 @@ export const DirectionAwareHover = ({
   const [direction, setDirection] = useState<
     "top" | "bottom" | "left" | "right" | string
   >("left");
+  const [isClicked, setIsClicked] = useState(false);
 
   const handleMouseEnter = (
     event: React.MouseEvent<HTMLDivElement, MouseEvent>
@@ -30,7 +31,6 @@ export const DirectionAwareHover = ({
     if (!ref.current) return;
 
     const direction = getDirection(event, ref.current);
-    console.log("direction", direction);
     switch (direction) {
       case 0:
         setDirection("top");
@@ -61,12 +61,17 @@ export const DirectionAwareHover = ({
     return d;
   };
 
+  const handleClick = () => {
+    setIsClicked((prev) => !prev);
+  };
+
   return (
     <motion.div
       onMouseEnter={handleMouseEnter}
+      onClick={handleClick}
       ref={ref}
       className={cn(
-        "md:h-[31rem] w-60 h-60 md:w-96 bg-transparent rounded-lg overflow-hidden group/card relative",
+        "w-72 h-80 md:h-[31rem] md:w-96 bg-transparent rounded-lg overflow-hidden group/card relative cursor-pointer",
         className
       )}
     >
@@ -74,10 +79,13 @@ export const DirectionAwareHover = ({
         <motion.div
           className="relative h-full w-full"
           initial="initial"
-          whileHover={direction}
+          animate={isClicked ? "clicked" : direction}
           exit="exit"
         >
-          <motion.div className="group-hover/card:block hidden absolute inset-0 w-full h-full bg-black/40 z-10 transition duration-500" />
+          {/* Overlay on hover or click */}
+          <motion.div className="absolute inset-0 w-full h-full bg-black/40 z-10 transition-all duration-500 group-hover/card:block hidden md:block" />
+
+          {/* Image Section */}
           <motion.div
             variants={variants}
             className="h-full w-full relative bg-gray-50 dark:bg-black"
@@ -97,6 +105,8 @@ export const DirectionAwareHover = ({
               src={imageUrl}
             />
           </motion.div>
+
+          {/* Text/Props Section */}
           <motion.div
             variants={textVariants}
             transition={{
@@ -104,13 +114,28 @@ export const DirectionAwareHover = ({
               ease: "easeOut",
             }}
             className={cn(
-              "text-white absolute bottom-4 left-4 z-40",
+              "absolute bottom-4 left-4 z-40 text-white hidden md:block",
               childrenClassName
             )}
           >
             {children}
           </motion.div>
         </motion.div>
+      </AnimatePresence>
+
+      {/* Props Section for Small Screens */}
+      <AnimatePresence>
+        {isClicked && (
+          <motion.div
+            initial={{ y: "100%" }}
+            animate={{ y: 0 }}
+            exit={{ y: "100%" }}
+            transition={{ duration: 0.3, ease: "easeInOut" }}
+            className="absolute inset-0 z-50 flex flex-col justify-center items-center bg-black/80 text-white p-6 md:hidden"
+          >
+            {children}
+          </motion.div>
+        )}
       </AnimatePresence>
     </motion.div>
   );

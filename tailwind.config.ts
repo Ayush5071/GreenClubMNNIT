@@ -23,6 +23,14 @@ module.exports = {
         },
       },
     },
+    fontFamily: {
+      bebas: ["Bebas Neue", "sans-serif"],
+      bionix: ["Bionix", "sans-serif"],
+      moon: ['"MOONGETTI"'],
+      sfText: ['"SF Pro Text"', "Arial", "sans-serif"],
+      Sfpro: ['"Sfpro"'],
+      Manrope: ['"Manrope"'],
+    },
   },
   plugins: [addVariablesForColors],
 };

@@ -38,7 +38,7 @@ const Contact = () => {
   };
 
   return (
-    <section className="bg-zinc-950 py-8 lg:py-16 px-4 mx-auto max-w-screen-md">
+    <section id="contact" className="bg-zinc-950 py-8 lg:py-16 px-4 mx-auto max-w-screen-md">
       <div className="bg-zinc-800 border-2 border-white rounded-2xl p-8 w-full shadow-xl">
         <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-center text-white">
           Get in Touch with the Green Club

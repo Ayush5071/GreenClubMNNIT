@@ -134,11 +134,39 @@ const freshers = [
   const secondYears = [
     {
       name: "Ayush Tiwari",
-      linkedin: "https://www.linkedin.com/in/dushyant-verma-6a84b12ba?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-      instagram: "vermadushyant250/profilecard/?igsh=eDllbHdwcWZnaXE2",
+      linkedin: "https://www.linkedin.com/in/ayush-tiwari-84a823281/",
+      instagram: "ayushtiwari5071",
       team: "Web Team",
       drive: "/profile/second/ayush.webp"
     },
+    {
+      name: "Abhavya Mishra",
+      linkedin: "https://www.linkedin.com/in/abhavya-mishra-66a1ba311/",
+      instagram: "abhavya_mish/",
+      team: "Content Team",
+      drive: "/profile/second/abhavya.webp"
+    },
+    {
+      name: "Jai Verma",
+      linkedin: "https://www.linkedin.com/in/jai-verma-8b09272b6?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+      instagram: "jai_v5794/profilecard/?igsh=bGIya3o4dGJyM2N1",
+      team: "Core and Social Media",
+      drive: "/profile/second/jai.webp"
+    },
+    {
+      name: "Yash Nayak",
+      linkedin: "https://www.linkedin.com/in/yash-n-8372a8288?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+      instagram: "yash.nahhyk/profilecard/?igsh=MTFtcmZhZWF2MHQ2OA==",
+      team: "Web Team",
+      drive: "/profile/second/yash.webp"
+  },
+  {
+    name: "Dushyant Verma",
+    linkedin: "https://www.linkedin.com/in/dushyant-verma-6a84b12ba?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+    instagram: "vermadushyant250/profilecard/?igsh=eDllbHdwcWZnaXE2",
+    team: "Core and Social Media",
+    drive: "/profile/second/dushyant.webp"
+  },
     {
         name: "Manashvi Sewal",
         linkedin: "https://www.linkedin.com/in/manashvi-sewal-0b1666322",
@@ -147,32 +175,11 @@ const freshers = [
         drive: "/profile/second/manashvi.webp"
     },
     {
-        name: "Yash Nayak",
-        linkedin: "https://www.linkedin.com/in/yash-n-8372a8288?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-        instagram: "yash.nahhyk/profilecard/?igsh=MTFtcmZhZWF2MHQ2OA==",
-        team: "Web Team",
-        drive: "/profile/boy.webp"
-    },
-    {
-      name: "Dushyant Verma",
-      linkedin: "https://www.linkedin.com/in/dushyant-verma-6a84b12ba?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-      instagram: "vermadushyant250/profilecard/?igsh=eDllbHdwcWZnaXE2",
-      team: "Core and Social Media",
-      drive: "/profile/second/dushyant.webp"
-    },
-    {
       name: "Krishna Raj Agrawal",
       linkedin: "www.linkedin.com/in/krishnarajagrawal",
       instagram: "peeakaabooo/",
       team: "Core and Social Media",
       drive: "/profile/second/krishna.webp"
-    },
-    {
-      name: "Jai Verma",
-      linkedin: "https://www.linkedin.com/in/jai-verma-8b09272b6?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-      instagram: "jai_v5794/profilecard/?igsh=bGIya3o4dGJyM2N1",
-      team: "Core and Social Media",
-      drive: "/profile/second/jai.webp"
     },
     {
       name: "Abhishek Kumar Singh",
@@ -196,13 +203,7 @@ const freshers = [
       team: "Core and Social Media",
       drive: "/profile/girl.webp"
     },
-    {
-      name: "Abhavya Mishra",
-      linkedin: "https://www.linkedin.com/in/abhavya-mishra-66a1ba311/",
-      instagram: "abhavya_mish/",
-      team: "Content Team",
-      drive: "/profile/girl.webp"
-    }
+
   ];
 
   const thirdYears = [

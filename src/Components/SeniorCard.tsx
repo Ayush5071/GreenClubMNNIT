@@ -29,13 +29,12 @@ export function SeniorCard({
         <div className="flex gap-5">
           <div className="">
             <p className="font-bold text-2xl">{name}</p>
-            <p className="font-normal text-lg">{year} rd year</p>
           </div>
           <div className="flex text-4xl justify-center items-center gap-2">
-          <a href="https://google.com" target="_blank">
+          <a href={`https://www.instagram.com/${Instagram}`} target="_blank">
             <PiInstagramLogoFill/>
           </a>
-          <a href="www.google.com" target="_blank">
+          <a href={LinkedIn} target="_blank">
             <FaLinkedin/>
           </a>
           </div>

@@ -28,13 +28,6 @@ export const metadata: Metadata = {
       },
     ],
   },
-  twitter: {
-    card: "summary_large_image",
-    site: "@greenclubmnnit",
-    title: "Green Club MNNIT - Official Website",
-    description: "Official website of Green Club MNNIT. We take care of plantation, river flora and fauna, sustainability, and all environmental activities on campus.",
-    image: "https://www.greenclubmnnit.com/twitter-image.jpg",
-  },
 };
 
 export default function RootLayout({

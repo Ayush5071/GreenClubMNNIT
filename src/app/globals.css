@@ -83,6 +83,8 @@ html {
   
   .scrollbar-none {
     scrollbar-width: none; /* For Firefox */
+    overflow: -moz-scrollbars-none; /* Fallback for older browsers */
+    -webkit-overflow-scrolling: touch; /* Fallback for Chrome, Safari, iOS, Samsung Internet */
     -ms-overflow-style: none; /* For Internet Explorer and Edge */
   }
   .scrollbar-none::-webkit-scrollbar {
@@ -92,4 +94,21 @@ html {
   .notallow{
     user-select: none;
   }
-  
+
+/* Custom shiny scrollbar */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #000000; /* Black track */
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(45deg, #22c55e, #16a34a); /* Green thumb */
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(45deg, #16a34a, #15803d); /* Darker green on hover */
+}

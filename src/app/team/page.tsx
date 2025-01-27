@@ -2,7 +2,7 @@ import React from "react";
 import FinalYear from "@/Components/sections/FinalYear";
 import ThirdYear from "@/Components/sections/ThirdYear";
 import SecondYear from "@/Components/sections/SecondYear";
-import { Freshers } from "@/Components/freshers"; 
+import { Freshers } from "@/Components/freshers";
 
 const TeamsPage = () => {
   return (
@@ -21,45 +21,52 @@ const TeamsPage = () => {
 
       {/* Final Year Section */}
       <section className="space-y-10">
-        <h2 className="text-3xl md:text-5xlfont-bebas font-semibold  text-center text-white relative">
+        <h2 className="text-3xl md:text-5xl font-bebas font-semibold text-center text-white relative">
           <span className="relative decoration-green-500 underline">
             Final Year Team
             <span className="absolute inset-0 text-shadow-glow"></span>
           </span>
         </h2>
+        <div className="w-full flex justify-around items-center ">
         <FinalYear />
+        </div>
       </section>
 
+      {/* Third Year Section */}
       <section className="space-y-10">
-        <h2 className="text-3xl md:text-5xlfont-bebas font-semibold text-center text-white relative">
+        <h2 className="text-3xl md:text-5xl font-bebas font-semibold text-center text-white relative">
           <span className="relative decoration-green-500 underline">
             Third Year Team
             <span className="absolute inset-0 text-shadow-glow"></span>
           </span>
         </h2>
-        <ThirdYear />
+        <div className="w-full flex justify-around items-center ">
+          <ThirdYear />
+        </div>
       </section>
 
       {/* Second Year Section */}
       <section className="space-y-10">
-        <h2 className="text-3xl md:text-5xlfont-bebas font-semibold text-center text-white relative">
+        <h2 className="text-3xl md:text-5xl font-bebas font-semibold text-center text-white relative">
           <span className="relative decoration-green-500 underline">
             Second Year Team
             <span className="absolute inset-0 text-shadow-glow"></span>
           </span>
         </h2>
-        <SecondYear />
+        <div className="w-full flex justify-around items-center ">
+          <SecondYear />
+        </div>
       </section>
 
       {/* Freshers Section */}
       <section className="space-y-10">
-        <h2 className="text-3xl md:text-5xlfont-bebas font-semibold text-center text-white relative">
+        <h2 className="text-3xl md:text-5xl font-bebas font-semibold text-center text-white relative">
           <span className="relative decoration-green-500 underline">
             Freshers Team
             <span className="absolute inset-0 text-shadow-glow"></span>
           </span>
         </h2>
-        <Freshers /> 
+        <Freshers />
       </section>
     </div>
   );

@@ -16,7 +16,6 @@ export const FloatingNav = ({ navItems, className }: {
   const { scrollYProgress } = useScroll();
   const [visible, setVisible] = useState(true);
 
-  // Toggle visibility on scroll
   useMotionValueEvent(scrollYProgress, "change", (current) => {
     if (typeof current === "number") {
       const direction = current! - scrollYProgress.getPrevious()!;
@@ -24,7 +23,7 @@ export const FloatingNav = ({ navItems, className }: {
       if (scrollYProgress.get() < 0.05) {
         setVisible(true);
       } else {
-        setVisible(direction < 0);  // Show on scroll up, hide on scroll down
+        setVisible(direction < 0);  
       }
     }
   });
@@ -47,7 +46,7 @@ export const FloatingNav = ({ navItems, className }: {
             href={navItem.link}
             className={cn("relative text-neutral-50 items-center font-bebas flex space-x-3 hover:text-neutral-300")}
           >
-            <span className="text-xl md:text-3xl cursor-pointer">{navItem.name}</span>
+            <span className="text-lg md:text-2xl cursor-pointer">{navItem.name}</span>
           </a>
         ))}
       </motion.div>

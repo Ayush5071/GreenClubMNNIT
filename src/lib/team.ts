@@ -186,22 +186,35 @@ const freshers = [
       linkedin: "https://www.linkedin.com/abhishek-kumar-singh-a661a5318",
       instagram: "",
       team: "Core and Social Media",
-      drive: "/profile/boy.webp"
+      drive: "/profile/second/abhishek.jpg"
     },
-
     {
       name: "Shanti Priya",
       linkedin: "linkedin.com/in/shantipriya-jha-ab65222b5",
       instagram: "shantipriy_a10?igsh=MTRxZ3h5YTA0bTNodA==&utm_source=ig_contact_invite",
       team: "Content Team",
-      drive: "/profile/girl.webp"
+      drive: "/profile/second/shantipriya.webp"
+    },
+    {
+      name: "Priyanshu Kumar Gupta",
+      linkedin: "https://www.linkedin.com/in/priyanshu-kumar-b11924278/",
+      instagram: "",
+      team: "Core and Social Media",
+      drive: "/profile/second/priyanshu.jpg"
     },
     {
       name: "Puli Laxmi Vennela",
-      linkedin: "laxmi-vennela-puli-b41939341",
+      linkedin: "https://www.linkedin.com/in/laxmi-vennela-puli-b41939341",
       instagram: "",
       team: "Core and Social Media",
-      drive: "/profile/girl.webp"
+      drive: "/profile/second/venella.jpg"
+    },
+    {
+      name: "Mayank Raj",
+      linkedin: "https://www.linkedin.com/in/mayank-raj-17109b308",
+      instagram: "22_mxyxnk_03?igsh=MWgzNzVmOWJlYTZsMQ==",
+      team: "Core and Social Media",
+      drive: "/profile/second/mayank.jpg"
     },
 
   ];
@@ -257,13 +270,6 @@ const freshers = [
       drive: "/profile/third/akarsh.jpg"
     },
     {
-      name: "Priyanka Yadav",
-      linkedin: "https://www.linkedin.com/in/priyankayadav2638",
-      instagram: "priyankaa_06_04",
-      team: "Social Media Team",
-      drive: "/profile/girl.webp"
-    },
-    {
       name: "Manish Kumar",
       linkedin: "https://www.linkedin.com/in/manish-kumar-4831162ab/",
       instagram: "elegance_manisth_4121",
@@ -278,11 +284,18 @@ const freshers = [
       drive: "/profile/third/shivangi.webp"
     },
     {
+      name: "Tanisha Jhalani",
+      linkedin:"https://www.linkedin.com/in/tanisha-jhalani-10263a258/?originalSubdomain=in",
+      instagram: "ambitious_2029",
+      team: "Core and Social media",
+      drive: "/profile/third/Tanisha.jpg"
+    },
+    {
       name: "Ghan Shyam",
       linkedin: "https://www.linkedin.com/in/ghan-shyam-858400295",
       instagram: "ghanshyam _thakur05",
       team: "Core Team",
-      drive: "/profile/boy.webp"
+      drive: "/profile/third/Ghan.jpg"
     },
     {
       name: "Kommareddy Likith Krishnasai",

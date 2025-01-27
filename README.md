@@ -1,4 +1,46 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Green Club MNNIT - Official Website
+
+This is the official website of Green Club MNNIT. We take care of plantation, river flora and fauna, sustainability, and all environmental activities on campus.
+
+## Motive
+
+The Green Club MNNIT aims to promote environmental awareness and sustainability within the campus. Our activities include plantation drives, maintaining river flora and fauna, and organizing events to educate and involve students in environmental conservation.
+
+## Tech Stack
+
+- **Next.js**: A React framework for building server-side rendered and static web applications.
+- **React**: A JavaScript library for building user interfaces.
+- **Tailwind CSS**: A utility-first CSS framework for rapid UI development.
+- **Framer Motion**: A library for animations and gestures in React.
+- **Vercel Analytics**: For tracking website analytics.
+- **React Hot Toast**: For displaying toast notifications.
+
+## Folder Structure
+
+```
+/public
+  /fonts
+    - Bionix.otf
+    - MOON.otf
+    - BebasNeue-Regular.ttf
+    - Sfpro.otf
+    - sfText_regular.OTF
+  - gclogo.ico
+  - og-image.jpg
+  - twitter-image.jpg
+
+/src
+  /app
+    - layout.tsx
+    - globals.css
+  /Components
+    /ui
+      - FloatingNav.tsx
+  /lib
+    - utils.ts
+
+/README.md
+```
 
 ## Getting Started
 

@@ -25,7 +25,6 @@ const Contact = () => {
       )
       .then(
         (response) => {
-          console.log("Success:", response); // Log the successful response
           setStatus("Message sent successfully!");
           setEmail(""); // Reset email field
           setMessage(""); // Reset message field

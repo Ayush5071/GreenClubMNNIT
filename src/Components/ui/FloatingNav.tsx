@@ -46,7 +46,7 @@ export const FloatingNav = ({ navItems, className }: {
             href={navItem.link}
             className={cn("relative text-neutral-50 items-center font-bebas flex space-x-3 hover:text-neutral-300")}
           >
-            <span className="text-lg md:text-2xl cursor-pointer">{navItem.name}</span>
+            <span className="text-xs md:text-2xl cursor-pointer">{navItem.name}</span>
           </a>
         ))}
       </motion.div>

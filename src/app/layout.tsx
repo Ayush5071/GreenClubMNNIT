@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   title: "Green Club MNNIT - Official Website",
   description: "Official website of Green Club MNNIT. We take care of plantation, river flora and fauna, sustainability, and all environmental activities on campus.",
   keywords: "Green Club, MNNIT, plantation, sustainability, flora, fauna, environment, campus activities, Motilal Nehru National Institute of Technology Prayagraj, NIT Allahabad, MNNIT, MNNITA, NIT Prayagraj",
-  author: "Green Club MNNIT",
+  authors: [{ name: "Green Club MNNIT" }],
   viewport: "width=device-width, initial-scale=1.0",
   robots: "index, follow",
   openGraph: {
@@ -27,6 +27,13 @@ export const metadata: Metadata = {
         alt: "Green Club MNNIT",
       },
     ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@greenclubmnnit",
+    title: "Green Club MNNIT - Official Website",
+    description: "Official website of Green Club MNNIT. We take care of plantation, river flora and fauna, sustainability, and all environmental activities on campus.",
+    images: "https://www.greenclubmnnit.com/twitter-image.jpg",
   },
 };
 

@@ -16,7 +16,6 @@ const Context = () => {
         {/* Content Section */}
         <div className="w-full md:w-[50%] text-white font-medium text-lg leading-relaxed">
           <p>
-            The Green Club at MNNIT is dedicated to promoting sustainability and fostering environmental consciousness across the campus. Inaugurated by Ram Nath Kovind, the Ex-President of India, the club takes initiatives for various sustainable development practices, including tree plantation, water conservation, and animal care.
           </p>
           <p className="mt-4 md:block hidden">
             Our efforts aim to reduce plastic usage by educating the community on alternatives and advocating for the installation of more dustbins throughout the campus. Additionally, we have initiated several programs that care for stray animals, providing water for their survival, and plant pots around the campus for a greener and healthier environment.

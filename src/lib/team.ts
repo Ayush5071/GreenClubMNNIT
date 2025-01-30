@@ -70,19 +70,9 @@ const freshers = [
       team: "Media Team"
     },
     {
-      name: "Aviral Tiwari",
-      linkedin: "https://www.linkedin.com/in/Aviraltiwari580/",
-      team: "Web Team"
-    },
-    {
       name: "Ayush Agarwal",
       linkedin: "https://www.linkedin.com/in/ayush-agarwal-9491b7272",
       team: "Core and Social Media"
-    },
-    {
-      name: "Dhairya Gupta",
-      linkedin: "",
-      team: "Web Team"
     },
     {
       name: "Satyam Soni",

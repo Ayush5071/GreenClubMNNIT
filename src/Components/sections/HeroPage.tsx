@@ -10,8 +10,7 @@ function HeroPage() {
         GREEN CLUB MNNIT
       </p>
       <p className="text-lg font-Sfpro md:text-xl mt-4 text-white font-light inter-var text-center max-w-3xl mx-auto">
-        The Green Club at MNNIT is dedicated to cultivating a sustainable and eco-friendly campus through tree plantation, plastic reduction, animal care, and environmental awareness initiatives. Our mission is to educate and inspire students to take action for a greener future.
-      </p>
+      The Green Club at MNNIT is dedicated to fostering a sustainable and eco-friendly campus. Through initiatives such as tree plantation drives, plastic waste reduction, animal care, and environmental awareness campaigns, we strive to create a positive impact on our surroundings.      </p>
       <p className="text-base font-Sfpro md:text-lg mt-6 text-white font-normal inter-var text-center max-w-3xl mx-auto">
         Join us in our journey to preserve nature, reduce our carbon footprint, and make MNNIT a cleaner, greener, and more sustainable place for all. From promoting plant care to spreading awareness on sustainability, together, we can create a lasting positive impact.
       </p>

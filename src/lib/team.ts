@@ -289,10 +289,10 @@ const freshers = [
     },
     {
       name: "Kommareddy Likith Krishnasai",
-      linkedin: "",
+      linkedin: "https://www.linkedin.com/in/likith-krishnasai-kommareddy-b4203025a/?originalSubdomain=in",
       instagram: "",
-      team: "",
-      drive: "/profile/boy.webp"
+      team: "Web Team",
+      drive: "/profile/third/likith.jpg"
     }
   ];
 

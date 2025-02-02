@@ -126,7 +126,7 @@ const freshers = [
       name: "Ayush Tiwari",
       linkedin: "https://www.linkedin.com/in/ayush-tiwari-84a823281/",
       instagram: "ayushtiwari5071",
-      team: "Web Team",
+      team: "Web & Socila Media Team",
       drive: "/profile/second/ayush.webp"
     },
     {
@@ -189,7 +189,7 @@ const freshers = [
       name: "Priyanshu Kumar Gupta",
       linkedin: "https://www.linkedin.com/in/priyanshu-kumar-b11924278/",
       instagram: "",
-      team: "Core and Social Media",
+      team: "Design and Web Team",
       drive: "/profile/second/priyanshu.jpg"
     },
     {

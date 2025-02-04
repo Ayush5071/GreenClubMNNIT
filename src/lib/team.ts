@@ -126,7 +126,7 @@ const freshers = [
       name: "Ayush Tiwari",
       linkedin: "https://www.linkedin.com/in/ayush-tiwari-84a823281/",
       instagram: "ayushtiwari5071",
-      team: "Web & Socila Media Team",
+      team: "Web & Social Media Team",
       drive: "/profile/second/ayush.webp"
     },
     {

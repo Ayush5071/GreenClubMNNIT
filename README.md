@@ -1,78 +1,87 @@
-# Green Club MNNIT - Official Website
+# 🌱 Green Club MNNIT - Official Website
 
-This is the official website of Green Club MNNIT. We take care of plantation, river flora and fauna, sustainability, and all environmental activities on campus.
+Welcome to the official website of **Green Club MNNIT** — a vibrant, student-driven initiative dedicated to sustainability, nature, and environmental action at MNNIT Allahabad.
 
-## Motive
+---
 
-The Green Club MNNIT aims to promote environmental awareness and sustainability within the campus. Our activities include plantation drives, maintaining river flora and fauna, and organizing events to educate and involve students in environmental conservation.
+## 🌿 Our Mission
 
-## Tech Stack
+> "Empowering the campus community to create a greener, cleaner, and more sustainable future."
 
-- **Next.js**: A React framework for building server-side rendered and static web applications.
-- **React**: A JavaScript library for building user interfaces.
-- **Tailwind CSS**: A utility-first CSS framework for rapid UI development.
-- **Framer Motion**: A library for animations and gestures in React.
-- **Vercel Analytics**: For tracking website analytics.
-- **React Hot Toast**: For displaying toast notifications.
+Currently, Green Club MNNIT is not involved in any official mission or program. Stay tuned for future updates and opportunities to join our movement!
 
-## Folder Structure
+---
+
+## ✨ Features
+
+- **Modern, eco-friendly UI** (glassmorphism, green gradients, animated backgrounds)
+- **Responsive design** (mobile-first, looks great everywhere)
+- **Team page** (filter by year, 3D animated cards, optimized rendering)
+- **Gallery** (drag & drop upload, lightbox, admin-only delete, upload progress, modern effects)
+- **Problem Listing & Management**
+  - Submit problems/issues (with labels)
+  - Advanced filtering and search
+  - Label-based organization
+  - Admins can edit/delete any problem
+  - Users can manage their own submissions
+- **Admin Login & Dashboard**
+  - Secure login (JWT-based)
+  - Admin/member roles
+  - Admins have full access to all features
+  - Members have access to their own data
+- **Contact Form** (Nodemailer, SMTP, secure)
+- **MongoDB Database** (users, problems, gallery)
+- **Production-ready** (Vercel hosting, cloud-ready)
+
+---
+
+## 🖥️ Tech Stack
+
+- **Next.js** (App Router, SSR, API routes)
+- **React** (Modern UI, hooks)
+- **Tailwind CSS** (Utility-first, responsive design)
+- **Framer Motion** (Smooth, modern animations)
+- **MongoDB + Mongoose** (Database for users, problems, gallery)
+- **Nodemailer (SMTP)** (Contact form email, secure)
+- **JWT Auth** (Secure login, admin/member dashboard)
+- **Vercel** (Production hosting)
+
+---
+
+## 📁 Project Structure
 
 ```
 /public
-  /fonts
-    - Bionix.otf
-    - MOON.otf
-    - BebasNeue-Regular.ttf
-    - Sfpro.otf
-    - sfText_regular.OTF
-  - gclogo.ico
-  - og-image.jpg
-  - twitter-image.jpg
-
+  /fonts         # Custom fonts
+  /gallery       # (Dev only) Local image uploads
+  /Images        # Static images
 /src
-  /app
-    - layout.tsx
-    - globals.css
-  /Components
-    /ui
-      - FloatingNav.tsx
-  /lib
-    - utils.ts
-
-/README.md
+  /app           # Next.js app directory (pages, API, layout)
+  /Components    # UI components (Hero, Team, Gallery, etc.)
+  /lib           # Utilities, data, auth, DB logic
+  /auth          # Auth pages (login, signup)
+README.md
 ```
 
-## Getting Started
+---
 
-First, run the development server:
+## 🖼️ Image Upload (Important!)
+- **Local image upload works only in development.**
+- On Vercel (production), use a cloud storage service (e.g., S3, Cloudinary) for uploads.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+---
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 📬 Contact & Contributing
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- Email: [greenclub@mnnit.ac.in](mailto:greenclub@mnnit.ac.in)
+- Want to contribute? Fork, branch, and PR! Suggestions and new features are welcome.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+---
 
-## Learn More
+## 🌐 Deploy on Vercel
 
-To learn more about Next.js, take a look at the following resources:
+Deploy instantly with [Vercel](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme).
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+> Designed & built with 💚 by the Green Club MNNIT team.

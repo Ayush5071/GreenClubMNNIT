@@ -34,7 +34,7 @@ export async function POST(request: NextRequest) {
     // Email options
     const mailOptions = {
       from: process.env.SMTP_EMAIL,
-      to: 'greenclub@mnnit.ac.in,ayusht5071@gmail.com', // Send to both club and your email
+      to: 'ayusht5071@gmail.com', 
       subject: `Contact Form: ${subject}`,
       html: `
         <h2>New Contact Form Submission</h2>

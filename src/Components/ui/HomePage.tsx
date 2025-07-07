@@ -62,11 +62,14 @@ export const WavyBackground = ({
   };
 
   const waveColors = colors ?? [
-    "#4caf50", // Green
-    "#8bc34a", // Light Green
-    "#cddc39", // Lime
-    "#81d4fa", // Light Blue (Water)
-    "#ffb74d", // Earthy Orange
+    "#22c55e", // Vibrant Green
+    "#16a34a", // Forest Green
+    "#15803d", // Deep Green
+    "#65a30d", // Lime Green
+    "#84cc16", // Bright Lime
+    "#a3e635", // Light Lime
+    "#059669", // Emerald
+    "#047857", // Dark Emerald
   ];
   
   const drawWave = (n: number) => {
@@ -86,10 +89,17 @@ export const WavyBackground = ({
 
   let animationId: number;
   const render = () => {
-    ctx.fillStyle = backgroundFill || "#09090b";
+    // Create a nature-inspired gradient background
+    const gradient = ctx.createLinearGradient(0, 0, 0, h);
+    gradient.addColorStop(0, "#0f172a"); // Dark slate (night sky)
+    gradient.addColorStop(0.3, "#1e293b"); // Darker slate
+    gradient.addColorStop(0.6, "#064e3b"); // Dark green
+    gradient.addColorStop(1, "#022c22"); // Very dark green
+    
+    ctx.fillStyle = backgroundFill || gradient;
     ctx.globalAlpha = waveOpacity || 0.5;
     ctx.fillRect(0, 0, w, h);
-    drawWave(5);
+    drawWave(6); // Increased wave count for richer effect
     animationId = requestAnimationFrame(render);
   };
 
@@ -113,7 +123,7 @@ export const WavyBackground = ({
   return (
     <div
       className={cn(
-        "h-screen flex flex-col items-center my-16 justify-center",
+        "h-screen flex flex-col items-center pt-20 pb-16 justify-center",
         containerClassName
       )}
     >

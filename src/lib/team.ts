@@ -246,13 +246,6 @@ const freshers = [
       drive: "/profile/third/vivek.webp"
     },
     {
-      name: "Pranit Narayan",
-      linkedin: "",
-      instagram: "",
-      team: "",
-      drive: "/profile/boy.webp"
-    },
-    {
       name: "Aakarsh Kumar",
       linkedin: "www.linkedin.com/in/aakarshkumar05",
       instagram: "aakarsh__05",
@@ -296,7 +289,13 @@ const freshers = [
     }
   ];
 
-  const headCoordinators = [
+  const headCoordinators: Array<{
+    name: string;
+    linkedin?: string;
+    instagram?: string;
+    team: string;
+    drive?: string;
+  }> = [
 
   ];
 
@@ -332,4 +331,20 @@ const freshers = [
   ];
   
 
-  export {finalYears,freshers,secondYears,thirdYears,headCoordinators};
+  // Export with updated year classifications
+  export {
+    finalYears,    // Alumni (graduated members)
+    thirdYears,    // Current final years
+    secondYears,   // Current third years  
+    freshers,      // Current second years
+    headCoordinators
+  };
+  
+  // Year mapping for the new classification system
+  export const yearMapping = {
+    alumni: finalYears,        // These are now alumni (graduated)
+    finalYears: thirdYears,    // Third years become final years
+    thirdYears: secondYears,   // Second years become third years
+    secondYears: freshers,     // Freshers become second years
+    headCoordinators: headCoordinators
+  };

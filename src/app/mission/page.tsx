@@ -25,15 +25,12 @@ const Mission = () => {
           Currently, Green Club MNNIT is not involved in any official mission or program.<br />
           Stay tuned for future updates and opportunities to join our movement for a greener campus and planet!
         </p>
-        <Link href="/">
-          <motion.button
-            className="mt-4 px-8 py-4 bg-gradient-to-r from-green-500 to-emerald-600 text-white font-bold text-lg rounded-xl shadow-lg hover:shadow-xl border border-green-400/50 transition-all duration-300 hover:scale-105"
-            whileHover={{ scale: 1.07 }}
-            whileTap={{ scale: 0.97 }}
-          >
-            Go to Home Page
-          </motion.button>
-        </Link>
+        <button
+          className="mt-4 px-8 py-4 bg-gradient-to-r from-green-500 to-emerald-600 text-white font-bold text-lg rounded-xl shadow-lg hover:shadow-xl border border-green-400/50 transition-all duration-300 hover:scale-105"
+          onClick={() => window.location.href = '/'}
+        >
+          Go to Home Page
+        </button>
       </motion.div>
       {/* Decorative Elements */}
       <motion.div

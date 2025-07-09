@@ -416,7 +416,7 @@ const TeamsPage = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}
-          className="bg-gray-800/60 backdrop-blur-2xl rounded-3xl border border-gray-700/50 p-8 mb-16 shadow-2xl"
+          className="bg-gray-800/60 backdrop-blur-2xl rounded-3xl border border-gray-700/50 p-8 mb-16 shadow-2xl relative z-[2000]"
         >
           <div className="flex flex-col lg:flex-row gap-6 items-center justify-between">
             {/* Search */}
@@ -436,7 +436,7 @@ const TeamsPage = () => {
               <div className="relative">
                 <button
                   onClick={() => setIsYearDropdownOpen(!isYearDropdownOpen)}
-                  className="flex items-center gap-3 px-6 py-4 bg-gray-700/50 border border-gray-600/50 rounded-2xl text-white hover:bg-gray-600/50 transition-all duration-300 backdrop-blur-sm min-w-[180px] shadow-lg hover:shadow-xl"
+                  className="flex items-center gap-3 px-3 sm:px-6 py-3 sm:py-4 bg-gray-700/50 border border-gray-600/50 rounded-2xl text-white hover:bg-gray-600/50 transition-all duration-300 backdrop-blur-sm min-w-[120px] sm:min-w-[180px] shadow-lg hover:shadow-xl text-xs sm:text-base"
                 >
                   <FiFilter className="text-green-400" />
                   <span className="font-medium">{selectedYear === 'all' ? 'All Years' : selectedYear.charAt(0).toUpperCase() + selectedYear.slice(1)}</span>
@@ -450,7 +450,7 @@ const TeamsPage = () => {
                       animate={{ opacity: 1, y: 0, scale: 1 }}
                       exit={{ opacity: 0, y: -10, scale: 0.95 }}
                       transition={{ duration: 0.2 }}
-                      className="absolute top-full mt-2 left-0 bg-gray-800/95 backdrop-blur-xl border border-gray-700/50 rounded-2xl shadow-2xl z-[100] min-w-full overflow-hidden"
+                      className="absolute top-full mt-2 left-0 bg-gray-800/95 backdrop-blur-xl border border-gray-700/50 rounded-2xl shadow-2xl z-[1000] min-w-full overflow-hidden"
                     >
                       {['all', 'head', 'alumni', 'final', 'third', 'second'].map((year) => (
                         <button
@@ -477,7 +477,7 @@ const TeamsPage = () => {
               <div className="relative">
                 <button
                   onClick={() => setIsTeamDropdownOpen(!isTeamDropdownOpen)}
-                  className="flex items-center gap-3 px-6 py-4 bg-gray-700/50 border border-gray-600/50 rounded-2xl text-white hover:bg-gray-600/50 transition-all duration-300 backdrop-blur-sm min-w-[180px] shadow-lg hover:shadow-xl"
+                  className="flex items-center gap-3 px-3 sm:px-6 py-3 sm:py-4 bg-gray-700/50 border border-gray-600/50 rounded-2xl text-white hover:bg-gray-600/50 transition-all duration-300 backdrop-blur-sm min-w-[120px] sm:min-w-[180px] shadow-lg hover:shadow-xl text-xs sm:text-base"
                 >
                   <FiUsers className="text-green-400" />
                   <span className="font-medium truncate">{selectedTeam === 'all' ? 'All Teams' : selectedTeam}</span>
@@ -491,7 +491,7 @@ const TeamsPage = () => {
                       animate={{ opacity: 1, y: 0, scale: 1 }}
                       exit={{ opacity: 0, y: -10, scale: 0.95 }}
                       transition={{ duration: 0.2 }}
-                      className="absolute top-full mt-2 right-0 bg-gray-800/95 backdrop-blur-xl border border-gray-700/50 rounded-2xl shadow-2xl z-[100] min-w-full max-h-60 overflow-y-auto"
+                      className="absolute top-full mt-2 right-0 bg-gray-800/95 backdrop-blur-xl border border-gray-700/50 rounded-2xl shadow-2xl z-[1000] min-w-full max-h-60 overflow-y-auto"
                     >
                       <button
                         onClick={() => {

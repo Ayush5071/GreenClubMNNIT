@@ -12,7 +12,7 @@ interface Member {
 
 const Card = ({ member }: { member: Member }) => {
   return (
-    <div className="relative bg-gray-900 rounded-lg shadow-lg overflow-hidden w-64 h-80 group">
+    <div className="relative bg-gray-900 rounded-lg shadow-lg overflow-hidden w-64 h-80 group max-w-full sm:w-64 sm:h-80 w-full h-72">
       {member.drive && (
         <Image 
           src={member.drive} 
@@ -22,9 +22,9 @@ const Card = ({ member }: { member: Member }) => {
           className="transition-transform duration-300 group-hover:scale-110" 
         />
       )}
-      <div className="absolute bottom-0 left-0 right-0 bg-gray-900 bg-opacity-75 p-4 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-        <h3 className="text-xl font-semibold text-white">{member.name}</h3>
-        <p className="text-gray-400">{member.team}</p>
+      <div className="absolute bottom-0 left-0 right-0 bg-gray-900 bg-opacity-75 p-4 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300 break-words text-ellipsis">
+        <h3 className="text-xl font-semibold text-white truncate max-w-full">{member.name}</h3>
+        <p className="text-gray-400 break-words text-sm max-w-full">{member.team}</p>
         <div className="flex space-x-4 mt-2">
           <a href={member.linkedin} className="text-blue-500" target="_blank" rel="noopener noreferrer">
             <FaLinkedin size={24} />

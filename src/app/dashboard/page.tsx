@@ -375,19 +375,19 @@ const Dashboard = () => {
     <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-green-900">
       {/* Header */}
       <div className="bg-gray-800/70 backdrop-blur-lg shadow-lg border-b border-gray-700/50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center py-4">
-            <div className="flex items-center space-x-4">
-              <h1 className="text-2xl font-bold text-green-400">Green Club Dashboard</h1>
-              <span className="text-sm text-gray-400">Welcome, {user?.name}</span>
+        <div className="max-w-7xl mx-auto px-2 sm:px-4 lg:px-8">
+          <div className="flex flex-col sm:flex-row justify-between items-center py-3 sm:py-4 gap-2 sm:gap-0">
+            <div className="flex items-center space-x-2 sm:space-x-4">
+              <h1 className="text-lg sm:text-2xl font-bold text-green-400 whitespace-nowrap">Green Club Dashboard</h1>
+              <span className="text-xs sm:text-sm text-gray-400 whitespace-nowrap">Welcome, {user?.name}</span>
             </div>
-            <div className="flex items-center space-x-4">
-              <span className="text-sm text-gray-300 bg-green-600/20 px-3 py-1 rounded-full border border-green-600/30">
+            <div className="flex items-center space-x-2 sm:space-x-4">
+              <span className="text-xs sm:text-sm text-gray-300 bg-green-600/20 px-2 sm:px-3 py-1 rounded-full border border-green-600/30">
                 {user?.role}
               </span>
               <button
                 onClick={handleLogout}
-                className="flex items-center space-x-2 text-gray-400 hover:text-red-400 transition-colors"
+                className="flex items-center space-x-1 sm:space-x-2 text-gray-400 hover:text-red-400 transition-colors text-xs sm:text-sm"
               >
                 <FiLogOut className="w-4 h-4" />
                 <span>Logout</span>
@@ -565,10 +565,10 @@ const Dashboard = () => {
                                   ))}
                                 </div>
                                 
-                                <div className="flex items-center space-x-4 text-sm text-gray-400">
-                                  <span>Category: {problem.category}</span>
-                                  <span>By: {problem.reportedBy}</span>
-                                  <span>Created: {new Date(problem.createdAt).toLocaleDateString()}</span>
+                                <div className="flex flex-col sm:flex-row flex-wrap gap-1 sm:gap-4 text-xs sm:text-sm text-gray-400 w-full">
+                                  <span className="break-all">Category: {problem.category}</span>
+                                  <span className="break-all">By: {problem.reportedBy}</span>
+                                  <span className="truncate max-w-[120px] sm:max-w-[90px] inline-block align-bottom" title={problem.createdAt}>Created: {new Date(problem.createdAt).toLocaleDateString()}</span>
                                 </div>
                               </div>
                               

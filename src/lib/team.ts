@@ -126,8 +126,15 @@ const freshers = [
       name: "Ayush Tiwari",
       linkedin: "https://www.linkedin.com/in/ayush-tiwari-84a823281/",
       instagram: "ayushtiwari5071",
-      team: "Web & Social Media Team",
-      drive: "/profile/second/ayush.webp"
+      team: "Web Team",
+      drive: "/profile/second/ayush.jpg"
+    },
+    {
+      name: "Akshat jain",
+      linkedin: "https://www.linkedin.com/in/akshat-jain-431704285/?originalSubdomain=in",
+      instagram: "ayushtiwari5071",
+      team: "Web Team",
+      drive: "/profile/second/akshat.jpg"
     },
     {
       name: "Abhavya Mishra",

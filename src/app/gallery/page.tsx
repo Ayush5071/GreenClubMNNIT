@@ -14,14 +14,9 @@ interface GalleryImage {
 
 function Gallery() {
   const [images, setImages] = useState<GalleryImage[]>([]);
-  const [isUploadModalOpen, setIsUploadModalOpen] = useState(false);
-  const [isUploading, setIsUploading] = useState(false);
-  const [uploadProgress, setUploadProgress] = useState(0);
-  const [dragActive, setDragActive] = useState(false);
   const [user, setUser] = useState<any>(null);
-  const [selectedImage, setSelectedImage] = useState<string | null>(null);
   const [isAdmin, setIsAdmin] = useState(false);
-  const fileInputRef = useRef<HTMLInputElement>(null);
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
   // Load initial images and user
   useEffect(() => {
@@ -88,91 +83,7 @@ function Gallery() {
     }
   };
 
-  const handleDrag = (e: React.DragEvent) => {
-    e.preventDefault();
-    e.stopPropagation();
-    if (e.type === "dragenter" || e.type === "dragover") {
-      setDragActive(true);
-    } else if (e.type === "dragleave") {
-      setDragActive(false);
-    }
-  };
 
-  const handleDrop = (e: React.DragEvent) => {
-    e.preventDefault();
-    e.stopPropagation();
-    setDragActive(false);
-    
-    if (e.dataTransfer.files && e.dataTransfer.files[0]) {
-      uploadFile(e.dataTransfer.files[0]);
-    }
-  };
-
-  const handleFileSelect = (e: React.ChangeEvent<HTMLInputElement>) => {
-    if (e.target.files && e.target.files[0]) {
-      uploadFile(e.target.files[0]);
-    }
-  };
-
-  const uploadFile = async (file: File) => {
-    if (!user) return;
-
-    setIsUploading(true);
-    setUploadProgress(0);
-
-    const formData = new FormData();
-    formData.append('file', file);
-
-    try {
-      // Simulate upload progress
-      const progressInterval = setInterval(() => {
-        setUploadProgress(prev => {
-          if (prev >= 90) {
-            clearInterval(progressInterval);
-            return 90;
-          }
-          return prev + 10;
-        });
-      }, 200);
-
-      const response = await fetch('/api/gallery', {
-        method: 'POST',
-        body: formData,
-      });
-
-      clearInterval(progressInterval);
-      setUploadProgress(100);
-
-      if (response.ok) {
-        const result = await response.json();
-        
-        // Add new image to the gallery
-        const newImage: GalleryImage = {
-          src: result.path,
-          id: `uploaded-${Date.now()}`
-        };
-        setImages(prev => [newImage, ...prev]);
-        
-        // Show success message
-        setTimeout(() => {
-          setIsUploadModalOpen(false);
-          setIsUploading(false);
-          setUploadProgress(0);
-          alert('Image uploaded successfully! 🎉');
-        }, 1000);
-      } else {
-        const error = await response.json();
-        alert(error.error || 'Upload failed');
-        setIsUploading(false);
-        setUploadProgress(0);
-      }
-    } catch (error) {
-      console.error('Upload error:', error);
-      alert('Upload failed. Please try again.');
-      setIsUploading(false);
-      setUploadProgress(0);
-    }
-  };
 
   const deleteImage = async (imageSrc: string) => {
     if (!isAdmin) return;
@@ -205,187 +116,127 @@ function Gallery() {
     }
   };
 
+  // Simple Masonry/Flex Image Card
   const ImageCard = ({ image, index }: { image: GalleryImage; index: number }) => (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ delay: index * 0.05, type: "spring", stiffness: 300 }}
-      whileHover={{ y: -12, scale: 1.03 }}
-      className="relative group cursor-pointer"
+      transition={{ delay: index * 0.1, duration: 0.6 }}
+      whileHover={{ y: -5, scale: 1.02 }}
+      className="group cursor-pointer"
       onClick={() => setSelectedImage(image.src)}
+      style={{ breakInside: 'avoid', marginBottom: '1rem' }}
     >
-      <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-gray-900/90 via-gray-800/90 to-gray-900/90 backdrop-blur-xl border border-gray-700/50 group-hover:border-green-500/50 transition-all duration-500 shadow-xl group-hover:shadow-green-500/25 h-80">
-        {/* Background Grid Pattern */}
-        <div className="absolute inset-0 opacity-5 group-hover:opacity-10 transition-opacity duration-500">
-          <div className="absolute inset-0 bg-[url('/Elements/grid.png')] bg-[length:30px_30px] bg-center" />
-        </div>
+      <div className="relative overflow-hidden rounded-xl bg-gradient-to-br from-gray-900/50 to-gray-800/50 backdrop-blur-sm border border-gray-700/30 group-hover:border-green-400/50 transition-all duration-300 shadow-lg group-hover:shadow-green-500/20">
+        {/* Image */}
+        <img
+          src={image.src}
+          alt={`Gallery image ${index + 1}`}
+          loading="lazy"
+          onLoad={e => e.currentTarget.classList.add('loaded')}
+          style={{
+            width: '100%',
+            display: 'block',
+            borderRadius: '0.75rem',
+            transition: 'all 0.3s ease',
+          }}
+          className="gallery-img group-hover:scale-105"
+        />
         
-        {/* Animated Background Gradient */}
-        <div className="absolute inset-0 bg-gradient-to-br from-green-500/5 via-transparent to-emerald-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+        {/* Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl"></div>
         
-        {/* Glowing Border Effect */}
-        <div className="absolute inset-0 rounded-3xl border-2 border-green-400/0 group-hover:border-green-400/20 transition-all duration-500" />
-        
-        {/* Admin Delete Button */}
-        {isAdmin && (
-          <motion.button
-            onClick={(e) => {
-              e.stopPropagation();
-              deleteImage(image.src);
-            }}
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
-            className="absolute top-3 right-3 z-20 p-2 bg-red-600/90 hover:bg-red-600 text-white rounded-full opacity-70 group-hover:opacity-100 transition-all duration-300 border border-red-500/50 shadow-lg"
-            title="Delete image (Admin only)"
-          >
-            <FiTrash className="w-4 h-4" />
-          </motion.button>
-        )}
-        
-        {/* Image Container */}
-        <div className="relative p-4 h-full flex flex-col">
-          <div className="relative overflow-hidden rounded-2xl flex-1">
-            <Image
-              src={image.src}
-              alt={`Gallery image ${index + 1}`}
-              width={400}
-              height={300}
-              className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110 group-hover:brightness-110"
-              loading="lazy"
-            />
-            
-            {/* Image Overlay Gradient */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-            
-            {/* Floating Particles Effect */}
-            <div className="absolute inset-0 pointer-events-none">
-              {[...Array(3)].map((_, i) => (
-                <motion.div
-                  key={i}
-                  className="absolute w-1 h-1 bg-green-400 rounded-full opacity-0 group-hover:opacity-60"
-                  initial={{ opacity: 0, scale: 0 }}
-                  animate={{
-                    opacity: [0, 0.6, 0],
-                    scale: [0, 1, 0],
-                    x: [0, Math.random() * 80 - 40],
-                    y: [0, Math.random() * 80 - 40]
-                  }}
-                  transition={{
-                    duration: 2,
-                    repeat: Infinity,
-                    delay: i * 0.5
-                  }}
-                  style={{
-                    left: `${20 + i * 30}%`,
-                    top: `${20 + i * 20}%`
-                  }}
-                />
-              ))}
-            </div>
-
-            {/* Hero Section Stickers/Effects */}
-            <div className="absolute inset-0 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-              <motion.div
-                className="absolute top-4 left-4 text-green-400 text-2xl"
-                animate={{ 
-                  rotate: [0, 10, -10, 0],
-                  scale: [1, 1.1, 1]
-                }}
-                transition={{ 
-                  duration: 2,
-                  repeat: Infinity,
-                  ease: "easeInOut"
-                }}
-              >
-                🌱
-              </motion.div>
-              <motion.div
-                className="absolute bottom-6 right-6 text-emerald-400 text-lg"
-                animate={{ 
-                  y: [0, -5, 0],
-                  opacity: [0.7, 1, 0.7]
-                }}
-                transition={{ 
-                  duration: 1.5,
-                  repeat: Infinity,
-                  ease: "easeInOut"
-                }}
-              >
-                ✨
-              </motion.div>
-            </div>
-          </div>
-          
-          {/* Card Footer */}
-          <motion.div 
-            className="relative mt-4 text-center"
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 }}
-          >
-            <div className="flex items-center justify-center space-x-2 text-gray-400 group-hover:text-green-300 transition-colors duration-300">
+        {/* View indicator */}
+        <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+          <div className="flex items-center space-x-2 text-white">
+            <div className="p-2 bg-green-500/80 rounded-lg backdrop-blur-sm">
               <FiImage className="w-4 h-4" />
-              <span className="text-sm font-medium">View Image</span>
             </div>
-          </motion.div>
+            <span className="text-sm font-medium">View Image</span>
+          </div>
         </div>
-
-        {/* Corner Decorative Elements */}
-        <div className="absolute top-4 right-4 w-2 h-2 bg-green-400 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-        <div className="absolute bottom-6 left-4 w-1 h-1 bg-emerald-400 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+        
+        {/* Decorative corner */}
+        <div className="absolute top-3 right-3 w-2 h-2 bg-green-400 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
       </div>
     </motion.div>
   );
 
   return (
-    <div className="min-h-screen bg-gray-950">
+    <div className="min-h-screen bg-gradient-to-br from-gray-950 via-gray-900 to-green-950">
+      {/* Ambient Background Elements */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-20 left-10 w-64 h-64 bg-green-500/10 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-20 right-10 w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl"></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-to-r from-green-500/5 to-emerald-500/5 rounded-full blur-3xl"></div>
+      </div>
+
       {/* Back Button */}
       <div className="absolute top-6 left-6 z-50">
         <Link
           href="/"
-          className="inline-flex items-center text-gray-300 hover:text-white transition-all duration-300 bg-gray-800/80 backdrop-blur-sm px-4 py-2 rounded-lg border border-gray-700/50 hover:border-gray-600/50"
+          className="inline-flex items-center text-green-300 hover:text-green-200 transition-all duration-300 bg-gray-900/80 backdrop-blur-lg px-4 py-2 rounded-xl border border-green-400/30 hover:border-green-400/50 shadow-lg hover:shadow-green-500/20"
         >
           <FiArrowLeft className="mr-2" />
           Back to Home
         </Link>
       </div>
 
-      <div className="container mx-auto px-4 py-16">
+      <div className="container mx-auto px-4 py-16 relative z-10">
         {/* Header Section */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="text-center mb-12"
+          className="text-center mb-16"
         >
           <div className="flex items-center justify-center mb-6">
-            <FiImage className="text-4xl text-white mr-4" />
-            <h1 className="text-4xl md:text-6xl font-bold text-white">
-              Green Club Gallery
+            <div className="p-3 bg-gradient-to-r from-green-500/20 to-emerald-500/20 rounded-2xl border border-green-400/30 mr-4">
+              <FiImage className="text-3xl text-green-400" />
+            </div>
+            <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-green-400 via-emerald-400 to-teal-400 bg-clip-text text-transparent">
+              Gallery
             </h1>
           </div>
-          <p className="text-gray-400 text-lg max-w-2xl mx-auto mb-8">
-            Explore our collection of environmental initiatives, events, and memories.
+          <p className="text-gray-300 text-lg max-w-3xl mx-auto leading-relaxed">
+            Discover our journey towards a <span className="text-green-400 font-semibold">greener tomorrow</span> through 
+            environmental initiatives, campus events, and community impact moments.
           </p>
+          <div className="mt-6 w-24 h-1 bg-gradient-to-r from-green-400 to-emerald-400 mx-auto rounded-full"></div>
 
-          {/* Upload Button - Only for logged in users */}
-          {user && (
-            <motion.button
-              onClick={() => setIsUploadModalOpen(true)}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-500 hover:to-emerald-500 text-white font-semibold rounded-xl transition-all duration-300 shadow-lg hover:shadow-green-500/25"
-            >
-              <FiPlus className="mr-2" />
-              Add New Image
-            </motion.button>
-          )}
+
         </motion.div>
 
-        {/* Gallery Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 sm:gap-8 md:gap-10 px-2 sm:px-0">
-          {images.map((image, index) => (
-            <ImageCard key={image.id} image={image} index={index} />
-          ))}
+        {/* Gallery Masonry Layout */}
+        <div
+          className="gallery-masonry"
+          style={{
+            columnCount: 4,
+            columnGap: '1.5rem',
+            maxWidth: '1400px',
+            margin: '0 auto',
+            padding: '0 1rem',
+          }}
+        >
+          <style>{`
+            @media (min-width: 640px) { .gallery-masonry { column-count: 4; column-gap: 1.5rem; } }
+            @media (min-width: 1024px) { .gallery-masonry { column-count: 4; column-gap: 2rem; } }
+            @media (min-width: 1400px) { .gallery-masonry { column-count: 4; column-gap: 2rem; } }
+            .gallery-masonry img {
+              width: 100%;
+              border-radius: 0.75rem;
+              transition: all 0.3s ease;
+              max-height: 220px;
+              object-fit: cover;
+            }
+            .gallery-masonry img.loaded {
+              opacity: 1;
+            }
+          `}</style>
+          <AnimatePresence>
+            {images.map((image, index) => (
+              <ImageCard key={image.id} image={image} index={index} />
+            ))}
+          </AnimatePresence>
         </div>
 
         {/* Empty State */}
@@ -395,107 +246,18 @@ function Gallery() {
             animate={{ opacity: 1 }}
             className="text-center py-20"
           >
-            <FiImage className="text-6xl text-gray-600 mx-auto mb-4" />
-            <h3 className="text-2xl font-semibold text-gray-400 mb-2">No images yet</h3>
-            <p className="text-gray-500">Be the first to add an image to our gallery!</p>
+            <div className="p-6 bg-gradient-to-r from-green-500/10 to-emerald-500/10 rounded-3xl border border-green-400/20 max-w-md mx-auto">
+              <div className="p-4 bg-green-500/20 rounded-2xl w-fit mx-auto mb-4">
+                <FiImage className="text-4xl text-green-400" />
+              </div>
+              <h3 className="text-xl font-semibold text-white mb-2">Gallery Coming Soon</h3>
+              <p className="text-gray-300">Our environmental journey photos will be showcased here.</p>
+            </div>
           </motion.div>
         )}
       </div>
 
-      {/* Upload Modal */}
-      <AnimatePresence>
-        {isUploadModalOpen && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4"
-            onClick={() => !isUploading && setIsUploadModalOpen(false)}
-          >
-            <motion.div
-              initial={{ scale: 0.8, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.8, opacity: 0 }}
-              className="bg-gray-900 rounded-2xl p-8 max-w-md w-full border border-gray-700"
-              onClick={(e) => e.stopPropagation()}
-            >
-              <div className="flex items-center justify-between mb-6">
-                <h3 className="text-xl font-bold text-white">Upload Image</h3>
-                {!isUploading && (
-                  <button
-                    onClick={() => setIsUploadModalOpen(false)}
-                    className="text-gray-400 hover:text-white transition-colors"
-                    title="Close upload modal"
-                    aria-label="Close upload modal"
-                  >
-                    <FiX className="w-6 h-6" />
-                  </button>
-                )}
-              </div>
 
-              {!isUploading ? (
-                <div
-                  className={`border-2 border-dashed rounded-xl p-8 text-center transition-colors ${
-                    dragActive
-                      ? 'border-green-500 bg-green-500/10'
-                      : 'border-gray-600 hover:border-gray-500'
-                  }`}
-                  onDragEnter={handleDrag}
-                  onDragLeave={handleDrag}
-                  onDragOver={handleDrag}
-                  onDrop={handleDrop}
-                >
-                  <FiUpload className="w-12 h-12 text-gray-400 mx-auto mb-4" />
-                  <p className="text-gray-300 mb-2">Drag & drop an image here</p>
-                  <p className="text-gray-500 text-sm mb-4">or</p>
-                  <button
-                    onClick={() => fileInputRef.current?.click()}
-                    className="px-4 py-2 bg-green-600 hover:bg-green-700 text-white rounded-lg transition-colors"
-                  >
-                    Choose File
-                  </button>
-                  <input
-                    ref={fileInputRef}
-                    type="file"
-                    accept="image/*"
-                    onChange={handleFileSelect}
-                    className="hidden"
-                    title="Select image file"
-                    aria-label="Select image file to upload"
-                  />
-                  <p className="text-gray-500 text-xs mt-4">
-                    Supports: JPEG, PNG, WebP (Max 5MB)
-                  </p>
-                </div>
-              ) : (
-                <div className="text-center space-y-6">
-                  <div className="flex items-center justify-center">
-                    <div className="relative">
-                      <div className="w-20 h-20 border-4 border-gray-700 rounded-full"></div>
-                      <div className="absolute inset-0 w-20 h-20 border-4 border-green-500 border-t-transparent rounded-full animate-spin"></div>
-                      <div className="absolute inset-0 flex items-center justify-center">
-                        <span className="text-green-400 text-xs font-bold">{uploadProgress}%</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="space-y-2">
-                    <p className="text-white text-lg font-semibold">Uploading Image...</p>
-                    <p className="text-gray-400 text-sm">Please wait while we process your image</p>
-                  </div>
-                  <div className="w-full bg-gray-700 rounded-full h-3 overflow-hidden">
-                    <motion.div
-                      className="bg-gradient-to-r from-green-500 to-emerald-500 h-3 rounded-full"
-                      initial={{ width: 0 }}
-                      animate={{ width: `${uploadProgress}%` }}
-                      transition={{ duration: 0.3 }}
-                    />
-                  </div>
-                </div>
-              )}
-            </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
 
       {/* Enhanced Image Lightbox */}
       <AnimatePresence>

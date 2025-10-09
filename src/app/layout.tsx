@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/react"
@@ -7,12 +7,16 @@ import { Toaster } from "react-hot-toast";
 
 const inter = Inter({ subsets: ["latin"] });
 
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1.0,
+}
+
 export const metadata: Metadata = {
   title: "Green Club MNNIT - Official Website",
   description: "Official website of Green Club MNNIT. We take care of plantation, river flora and fauna, sustainability, and all environmental activities on campus.",
   keywords: "Green Club, MNNIT, plantation, sustainability, flora, fauna, environment, campus activities, Motilal Nehru National Institute of Technology Prayagraj, NIT Allahabad, MNNIT, MNNITA, NIT Prayagraj",
   authors: [{ name: "Green Club MNNIT" }],
-  viewport: "width=device-width, initial-scale=1.0",
   robots: "index, follow",
   openGraph: {
     title: "Green Club MNNIT - Official Website",

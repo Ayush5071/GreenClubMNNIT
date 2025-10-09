@@ -53,9 +53,9 @@ const TeamMemberCard = React.memo(({ member, year }: { member: TeamMember; year:
     animate={{ opacity: 1, y: 0 }}
     exit={{ opacity: 0, y: -20 }}
     whileHover={{ 
-      y: -12,
-      rotateY: 5,
-      rotateX: 5,
+      y: -8,
+      rotateY: 3,
+      rotateX: 3,
       scale: 1.02
     }}
     transition={{ 
@@ -66,36 +66,36 @@ const TeamMemberCard = React.memo(({ member, year }: { member: TeamMember; year:
     className="relative group h-full perspective-1000"
     style={{ transformStyle: "preserve-3d" }}
   >
-    <div className={`relative h-full ${year === 'Second Year' ? 'min-h-[240px]' : ''} bg-gradient-to-br from-gray-900/95 via-gray-800/95 to-gray-900/95 backdrop-blur-xl rounded-3xl border border-gray-700/50 overflow-hidden shadow-2xl group-hover:shadow-green-500/20 transition-all duration-500`}>
+    <div className={`relative h-full ${year === 'Second Year' ? 'min-h-[200px]' : 'min-h-[320px]'} bg-gradient-to-br from-gray-900/95 via-gray-800/95 to-gray-900/95 backdrop-blur-xl rounded-2xl border border-gray-700/50 overflow-hidden shadow-xl group-hover:shadow-green-500/20 transition-all duration-500`}>
       {/* Animated Background Effect */}
       <div className="absolute inset-0 bg-gradient-to-br from-green-500/5 via-transparent to-emerald-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
       
       {/* Glowing Border */}
-      <div className="absolute inset-0 rounded-3xl border-2 border-green-400/0 group-hover:border-green-400/20 transition-all duration-500" />
+      <div className="absolute inset-0 rounded-2xl border-2 border-green-400/0 group-hover:border-green-400/20 transition-all duration-500" />
       
       {/* 3D Grid Pattern Background */}
       <div className="absolute inset-0 opacity-10 group-hover:opacity-20 transition-opacity duration-500">
-        <div className="absolute inset-0 bg-[url('/Elements/grid.png')] bg-[length:50px_50px] bg-center transform-3d-grid" />
+        <div className="absolute inset-0 bg-[url('/Elements/grid.png')] bg-[length:30px_30px] bg-center transform-3d-grid" />
       </div>
       
       {/* Profile Image Section - Only show for non-second year members */}
       {year !== 'Second Year' && (
-        <div className="relative p-8 pb-4">
+        <div className="relative p-6 pb-3">
           <motion.div 
-            className="relative mx-auto w-32 h-32 md:w-36 md:h-36"
+            className="relative mx-auto w-24 h-24 md:w-28 md:h-28"
             whileHover={{ 
               scale: 1.1,
-              rotateY: 15,
+              rotateY: 10,
               rotateX: 5
             }}
             transition={{ type: "spring", stiffness: 400 }}
           >
             {/* Glow Effect */}
             <motion.div 
-              className="absolute inset-0 rounded-2xl bg-gradient-to-r from-green-400 to-emerald-400 opacity-0 group-hover:opacity-20 blur-xl transition-all duration-500"
+              className="absolute inset-0 rounded-xl bg-gradient-to-r from-green-400 to-emerald-400 opacity-0 group-hover:opacity-20 blur-lg transition-all duration-500"
               animate={{
-                scale: [1, 1.2, 1],
-                opacity: [0.1, 0.3, 0.1]
+                scale: [1, 1.1, 1],
+                opacity: [0.1, 0.2, 0.1]
               }}
               transition={{
                 duration: 3,
@@ -105,7 +105,7 @@ const TeamMemberCard = React.memo(({ member, year }: { member: TeamMember; year:
             />
             
             {/* Image Container */}
-            <div className="relative w-full h-full rounded-2xl overflow-hidden border-2 border-gray-600/40 group-hover:border-green-400/50 transition-all duration-500 shadow-2xl">
+            <div className="relative w-full h-full rounded-xl overflow-hidden border-2 border-gray-600/40 group-hover:border-green-400/50 transition-all duration-500 shadow-xl">
               <OptimizedImage
                 src={member.drive || (member.name.toLowerCase().includes('female') ? '/profile/girl.webp' : '/profile/boy.webp')}
                 alt={member.name}
@@ -144,10 +144,10 @@ const TeamMemberCard = React.memo(({ member, year }: { member: TeamMember; year:
             
             {/* Year Badge */}
             <motion.div 
-              className="absolute -bottom-3 -right-3 z-10"
+              className="absolute -bottom-2 -right-2 z-10"
               whileHover={{ scale: 1.1 }}
             >
-              <div className="px-3 py-1 bg-gradient-to-r from-green-600 to-emerald-600 text-white text-xs font-bold rounded-full shadow-lg border border-green-400/30 group-hover:from-green-500 group-hover:to-emerald-500 transition-all duration-300">
+              <div className="px-2 py-1 bg-gradient-to-r from-green-600 to-emerald-600 text-white text-xs font-bold rounded-full shadow-lg border border-green-400/30 group-hover:from-green-500 group-hover:to-emerald-500 transition-all duration-300">
                 {year.split(' ')[0]}
               </div>
             </motion.div>
@@ -156,11 +156,11 @@ const TeamMemberCard = React.memo(({ member, year }: { member: TeamMember; year:
       )}
 
       {/* Content Section */}
-      <div className={`relative z-10 ${year === 'Second Year' ? 'px-6 py-8 h-full flex flex-col justify-center items-center text-center space-y-4' : 'px-8 pb-8 space-y-4'}`}>
+      <div className={`relative z-10 ${year === 'Second Year' ? 'px-4 py-6 h-full flex flex-col justify-center items-center text-center space-y-3' : 'px-6 pb-6 space-y-3'}`}>
         {/* Professional Icon for Second Year Cards */}
         {year === 'Second Year' && (
           <motion.div
-            className="flex items-center justify-center w-16 h-16 bg-gradient-to-br from-green-600/20 to-emerald-600/20 rounded-2xl border border-green-500/30 group-hover:border-green-400/50 transition-all duration-300"
+            className="flex items-center justify-center w-12 h-12 bg-gradient-to-br from-green-600/20 to-emerald-600/20 rounded-xl border border-green-500/30 group-hover:border-green-400/50 transition-all duration-300"
             whileHover={{ 
               scale: 1.1,
               rotate: 5,
@@ -168,21 +168,21 @@ const TeamMemberCard = React.memo(({ member, year }: { member: TeamMember; year:
             }}
             transition={{ type: "spring", stiffness: 400 }}
           >
-            <FiUser className="w-8 h-8 text-green-400 group-hover:text-green-300 transition-colors duration-300" />
+            <FiUser className="w-6 h-6 text-green-400 group-hover:text-green-300 transition-colors duration-300" />
           </motion.div>
         )}
 
         {/* Name */}
         <motion.div 
-          className={`${year === 'Second Year' ? 'space-y-3' : 'text-center space-y-3'}`}
-          whileHover={{ y: -2 }}
+          className={`${year === 'Second Year' ? 'space-y-2' : 'text-center space-y-2'}`}
+          whileHover={{ y: -1 }}
         >
-          <h3 className={`font-bold text-white group-hover:text-green-300 transition-colors duration-300 leading-tight ${year === 'Second Year' ? 'text-lg md:text-xl' : 'text-xl md:text-2xl'}`}>
+          <h3 className={`font-bold text-white group-hover:text-green-300 transition-colors duration-300 leading-tight ${year === 'Second Year' ? 'text-sm md:text-base' : 'text-lg md:text-xl'}`}>
             {member.name}
           </h3>
           {member.team && (
             <motion.p 
-              className={`text-gray-400 font-medium bg-gray-800/50 rounded-lg border border-gray-700/50 inline-block group-hover:bg-gray-700/50 group-hover:border-green-500/30 group-hover:text-green-200 transition-all duration-300 ${year === 'Second Year' ? 'text-sm px-3 py-2' : 'text-sm px-4 py-2 rounded-xl'}`}
+              className={`text-gray-400 font-medium bg-gray-800/50 rounded-lg border border-gray-700/50 inline-block group-hover:bg-gray-700/50 group-hover:border-green-500/30 group-hover:text-green-200 transition-all duration-300 ${year === 'Second Year' ? 'text-xs px-2 py-1' : 'text-sm px-3 py-2'}`}
               whileHover={{ scale: 1.05 }}
             >
               {member.team}
@@ -191,7 +191,7 @@ const TeamMemberCard = React.memo(({ member, year }: { member: TeamMember; year:
           {/* Year Badge for Second Year (since they don't have image badge) */}
           {year === 'Second Year' && (
             <motion.div 
-              className="px-3 py-2 bg-gradient-to-r from-green-600 to-emerald-600 text-white text-sm font-bold rounded-full shadow-lg border border-green-400/30 group-hover:from-green-500 group-hover:to-emerald-500 transition-all duration-300 inline-block"
+              className="px-2 py-1 bg-gradient-to-r from-green-600 to-emerald-600 text-white text-xs font-bold rounded-full shadow-lg border border-green-400/30 group-hover:from-green-500 group-hover:to-emerald-500 transition-all duration-300 inline-block"
               whileHover={{ scale: 1.05, y: -1 }}
             >
               2nd Year
@@ -200,7 +200,7 @@ const TeamMemberCard = React.memo(({ member, year }: { member: TeamMember; year:
         </motion.div>
 
         {/* Social Links */}
-        <div className={`flex justify-center ${year === 'Second Year' ? 'pt-2 space-x-3' : 'pt-4 space-x-4'}`}>
+        <div className={`flex justify-center ${year === 'Second Year' ? 'pt-1 space-x-2' : 'pt-3 space-x-3'}`}>
           {member.linkedin && (
             <motion.a
               href={member.linkedin.startsWith('http') ? member.linkedin : `https://${member.linkedin}`}
@@ -208,14 +208,14 @@ const TeamMemberCard = React.memo(({ member, year }: { member: TeamMember; year:
               rel="noopener noreferrer"
               title={`${member.name}'s LinkedIn`}
               whileHover={{ 
-                scale: 1.15, 
-                rotate: 8,
-                y: -3
+                scale: 1.1, 
+                rotate: 5,
+                y: -2
               }}
               whileTap={{ scale: 0.9 }}
-              className={`bg-gradient-to-r from-blue-600/30 to-blue-500/30 hover:from-blue-600/50 hover:to-blue-500/50 text-blue-300 rounded-lg transition-all duration-300 border border-blue-600/40 hover:border-blue-500/60 shadow-lg hover:shadow-blue-500/25 ${year === 'Second Year' ? 'p-2' : 'p-3'}`}
+              className={`bg-gradient-to-r from-blue-600/30 to-blue-500/30 hover:from-blue-600/50 hover:to-blue-500/50 text-blue-300 rounded-lg transition-all duration-300 border border-blue-600/40 hover:border-blue-500/60 shadow-lg hover:shadow-blue-500/25 ${year === 'Second Year' ? 'p-1.5' : 'p-2.5'}`}
             >
-              <FiLinkedin className={`${year === 'Second Year' ? 'w-4 h-4' : 'w-5 h-5'}`} />
+              <FiLinkedin className={`${year === 'Second Year' ? 'w-3 h-3' : 'w-4 h-4'}`} />
             </motion.a>
           )}
           {member.instagram && (
@@ -225,14 +225,14 @@ const TeamMemberCard = React.memo(({ member, year }: { member: TeamMember; year:
               rel="noopener noreferrer"
               title={`${member.name}'s Instagram`}
               whileHover={{ 
-                scale: 1.15, 
-                rotate: -8,
-                y: -3
+                scale: 1.1, 
+                rotate: -5,
+                y: -2
               }}
               whileTap={{ scale: 0.9 }}
-              className={`bg-gradient-to-r from-pink-600/30 to-purple-600/30 hover:from-pink-600/50 hover:to-purple-600/50 text-pink-300 rounded-lg transition-all duration-300 border border-pink-600/40 hover:border-pink-500/60 shadow-lg hover:shadow-pink-500/25 ${year === 'Second Year' ? 'p-2' : 'p-3'}`}
+              className={`bg-gradient-to-r from-pink-600/30 to-purple-600/30 hover:from-pink-600/50 hover:to-purple-600/50 text-pink-300 rounded-lg transition-all duration-300 border border-pink-600/40 hover:border-pink-500/60 shadow-lg hover:shadow-pink-500/25 ${year === 'Second Year' ? 'p-1.5' : 'p-2.5'}`}
             >
-              <FiInstagram className={`${year === 'Second Year' ? 'w-4 h-4' : 'w-5 h-5'}`} />
+              <FiInstagram className={`${year === 'Second Year' ? 'w-3 h-3' : 'w-4 h-4'}`} />
             </motion.a>
           )}
         </div>
@@ -242,9 +242,9 @@ const TeamMemberCard = React.memo(({ member, year }: { member: TeamMember; year:
       {year === 'Second Year' ? (
         // Compact decorative elements for second year
         <>
-          <div className="absolute top-4 right-4 w-2 h-2 bg-green-400 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-          <div className="absolute bottom-4 left-4 w-1 h-1 bg-emerald-400 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
-          <div className="absolute top-1/2 right-6 w-1 h-1 bg-green-300 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-900" />
+          <div className="absolute top-3 right-3 w-1.5 h-1.5 bg-green-400 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+          <div className="absolute bottom-3 left-3 w-1 h-1 bg-emerald-400 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+          <div className="absolute top-1/2 right-4 w-0.5 h-0.5 bg-green-300 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-900" />
           {/* Cool floating mini particles */}
           <div className="absolute inset-0 pointer-events-none">
             {[...Array(2)].map((_, i) => (
@@ -253,15 +253,15 @@ const TeamMemberCard = React.memo(({ member, year }: { member: TeamMember; year:
                 className="absolute w-0.5 h-0.5 bg-green-400 rounded-full opacity-0 group-hover:opacity-60"
                 initial={{ opacity: 0, scale: 0 }}
                 animate={{
-                  opacity: [0, 0.6, 0],
+                  opacity: [0, 0.4, 0],
                   scale: [0, 1, 0],
-                  x: [0, Math.random() * 50 - 25],
-                  y: [0, Math.random() * 30 - 15]
+                  x: [0, Math.random() * 30 - 15],
+                  y: [0, Math.random() * 20 - 10]
                 }}
                 transition={{
-                  duration: 1.5,
+                  duration: 1.2,
                   repeat: Infinity,
-                  delay: i * 0.5
+                  delay: i * 0.4
                 }}
                 style={{
                   left: `${30 + i * 40}%`,
@@ -274,9 +274,9 @@ const TeamMemberCard = React.memo(({ member, year }: { member: TeamMember; year:
       ) : (
         // Regular decorative elements for other years
         <>
-          <div className="absolute top-6 right-6 w-3 h-3 bg-green-400 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-          <div className="absolute bottom-6 left-6 w-2 h-2 bg-emerald-400 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
-          <div className="absolute top-1/2 left-4 w-1 h-1 bg-green-300 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-900" />
+          <div className="absolute top-4 right-4 w-2.5 h-2.5 bg-green-400 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+          <div className="absolute bottom-4 left-4 w-1.5 h-1.5 bg-emerald-400 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+          <div className="absolute top-1/2 left-3 w-1 h-1 bg-green-300 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-900" />
         </>
       )}
     </div>
@@ -400,11 +400,19 @@ const TeamsPage = () => {
           animate={{ opacity: 1, y: 0 }}
           className="text-center mb-16"
         >
-          <div className="flex items-center justify-center mb-6">
-            <FiUsers className="text-4xl text-white mr-4" />
-            <h1 className="text-4xl md:text-6xl font-bold text-white">
-              Meet Our Team
-            </h1>
+          <div className="flex flex-col sm:flex-row items-center justify-center mb-6 gap-4">
+            <div className="flex items-center">
+              <FiUsers className="text-4xl text-white mr-4" />
+              <h1 className="text-4xl md:text-6xl font-bold text-white">
+                Meet Our Team
+              </h1>
+            </div>
+            <button
+              onClick={() => setSelectedYear('alumni')}
+              className="ml-0 sm:ml-6 px-5 py-2 bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-500 hover:to-emerald-500 text-white font-semibold rounded-full shadow-lg border border-green-400/30 transition-all duration-300"
+            >
+              Show Alumni
+            </button>
           </div>
           <p className="text-gray-400 text-lg max-w-2xl mx-auto">
             Get to know the passionate individuals driving our environmental mission forward.
@@ -559,8 +567,8 @@ const TeamsPage = () => {
                 />
               </div>
 
-              {/* Members Grid */}
-              <div className={`grid ${year === 'Second Year' ? 'gap-4 grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-5' : 'gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-4'}`}>
+              {/* Members Grid - unified for all years, 4 cards per row */}
+              <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 2xl:grid-cols-4">
                 <AnimatePresence mode="popLayout">
                   {members.map(({ member, year: memberYear }, index) => (
                     <motion.div
@@ -575,7 +583,7 @@ const TeamsPage = () => {
                         stiffness: 100,
                         damping: 15
                       }}
-                      className="h-full min-h-[400px]"
+                      className="h-full min-h-[340px]"
                     >
                       <TeamMemberCard member={member} year={memberYear} />
                     </motion.div>

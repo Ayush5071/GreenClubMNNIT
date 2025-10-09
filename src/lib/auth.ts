@@ -14,7 +14,8 @@ export class Auth {
   private static LOGIN_PASSWORD = process.env.LOGIN_PASSWORD || '123456';
 
   static isAuthorizedEmail(email: string): boolean {
-    return this.AUTHORIZED_EMAILS.includes(email);
+    // Check if email is in authorized list OR if it's the admin email
+    return this.AUTHORIZED_EMAILS.includes(email) || this.isAdmin(email);
   }
 
   static isAdmin(email: string): boolean {
@@ -26,7 +27,8 @@ export class Auth {
   }
 
   static generateToken(user: AuthUser): string {
-    return jwt.sign(user, this.JWT_SECRET, { expiresIn: '7d' });
+  // 20 minutes expiry
+  return jwt.sign(user, this.JWT_SECRET, { expiresIn: '20m' });
   }
 
   static verifyToken(token: string): AuthUser | null {

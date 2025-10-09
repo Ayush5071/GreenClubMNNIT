@@ -206,16 +206,9 @@ const freshers = [
       team: "Core and Social Media",
       drive: "/profile/second/venella.jpg"
     },
-    {
-      name: "Mayank Raj",
-      linkedin: "https://www.linkedin.com/in/mayank-raj-17109b308",
-      instagram: "22_mxyxnk_03?igsh=MWgzNzVmOWJlYTZsMQ==",
-      team: "Core and Social Media",
-      drive: "/profile/second/mayank.jpg"
-    },
 
   ];
-
+  
   const thirdYears = [
     {
         name: "Nitin Arya",

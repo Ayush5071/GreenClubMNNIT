@@ -10,10 +10,10 @@ function HeroPage() {
   }, []);
 
   const activities = [
-    { emoji: "🌳", text: "Plant Trees" },
-    { emoji: "🐾", text: "Care for Animals" },
-    { emoji: "♻️", text: "Reduce Waste" },
-    { emoji: "💧", text: "Water Conservation" },
+    { text: "Plant Trees" },
+    { text: "Care for Animals" },
+    { text: "Reduce Waste" },
+    { text: "Water Conservation" },
   ];
 
   return (
@@ -26,15 +26,7 @@ function HeroPage() {
       speed="fast"
       waveOpacity={0.5}
     >
-      {/* Floating particles effect */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-20 left-10 text-green-400 text-2xl opacity-30">🌿</div>
-        <div className="absolute top-32 right-16 text-green-300 text-3xl opacity-20">🍃</div>
-        <div className="absolute bottom-40 left-20 text-green-500 text-2xl opacity-25">🌱</div>
-        <div className="absolute bottom-32 right-10 text-green-400 text-2xl opacity-30">🌸</div>
-        <div className="absolute top-1/2 left-8 text-blue-300 text-2xl opacity-20">💫</div>
-        <div className="absolute top-1/3 right-12 text-yellow-300 text-2xl opacity-25">🌟</div>
-      </div>
+      {/* Floating particles effect removed as per request */}
 
       <div
         className={`text-center space-y-8 px-2 py-8 sm:px-4 sm:py-16 md:px-8 md:py-20 lg:px-12 lg:py-24 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'} w-full max-w-full`}
@@ -44,11 +36,7 @@ function HeroPage() {
           boxSizing: 'border-box',
         }}
       >
-        {/* Badge */}
-        <div className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-green-500/20 to-emerald-500/20 backdrop-blur-md border border-green-400/30 mb-4 shadow-lg mobile:px-2 mobile:py-1 mobile:text-xs">
-          <span className="text-green-300 text-sm font-semibold mr-2">🌱</span>
-          <span className="text-green-300 text-sm font-semibold">Growing a Greener Tomorrow</span>
-        </div>
+        {/* Badge removed as per request */}
         
         {/* Main Title */}
         <div className="space-y-2 mobile:space-y-1">
@@ -74,7 +62,7 @@ function HeroPage() {
         </div>
         
         {/* Action Items */}
-        <div className="flex flex-wrap justify-center gap-4 mt-12 hidden sm:flex">
+  <div className="flex flex-wrap justify-center gap-4 mt-12">
           {activities.map((activity, index) => (
             <div
               key={index}
@@ -84,9 +72,6 @@ function HeroPage() {
                 index === 2 ? 'animate-delay-200' : 'animate-delay-300'
               }`}
             >
-              <span className="text-2xl group-hover:scale-110 transition-transform duration-300">
-                {activity.emoji}
-              </span>
               <span className="text-white font-semibold group-hover:text-green-200 transition-colors">
                 {activity.text}
               </span>
@@ -95,34 +80,27 @@ function HeroPage() {
         </div>
         
         {/* Call to Action */}
-        <div className="pt-8 pb-8 mobile:pt-4 mobile:pb-4">
+        <div className="pt-8 pb-8 mobile:pt-4 mobile:pb-4 flex flex-col sm:flex-row gap-4 justify-center items-center">
           <button
             className="group relative px-6 py-3 bg-gradient-to-r from-green-600 via-green-500 to-emerald-500 hover:from-green-500 hover:via-emerald-500 hover:to-green-400 text-white font-bold text-lg rounded-full transition-all duration-300 transform hover:scale-105 shadow-xl hover:shadow-2xl mobile:px-3 mobile:py-2 mobile:text-sm"
-            onClick={() => window.location.href = '/mission'}
+            onClick={() => window.open('https://docs.google.com/forms/d/e/1FAIpQLScF7flJssMcxKstwQfQ9iUF7Iea8-lvvkDMgnTKS9tRfR84WA/viewform?usp=send_form', '_blank')}
           >
             <span className="relative z-10 flex items-center space-x-2">
-              <span>🌍</span>
-              <span>Join Our Mission</span>
+              <span>Join Team</span>
               <span className="group-hover:translate-x-1 transition-transform duration-300">→</span>
             </span>
             <div className="absolute inset-0 bg-white/20 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
           </button>
-        </div>
-        
-        {/* Stats */}
-        <div className="flex justify-center space-x-8 text-center mobile:space-x-2">
-          <div className="text-white/70">
-            <div className="text-xl font-bold text-green-300 mobile:text-base">500+</div>
-            <div className="text-sm mobile:text-xs">Trees</div>
-          </div>
-          <div className="text-white/70">
-            <div className="text-xl font-bold text-blue-300 mobile:text-base">50+</div>
-            <div className="text-sm mobile:text-xs">Campaigns</div>
-          </div>
-          <div className="text-white/70">
-            <div className="text-xl font-bold text-yellow-300 mobile:text-base">1000+</div>
-            <div className="text-sm mobile:text-xs">Students</div>
-          </div>
+          <button
+            className="group relative px-6 py-3 bg-gradient-to-r from-blue-600 via-blue-500 to-indigo-500 hover:from-blue-500 hover:via-indigo-500 hover:to-blue-400 text-white font-bold text-lg rounded-full transition-all duration-300 transform hover:scale-105 shadow-xl hover:shadow-2xl mobile:px-3 mobile:py-2 mobile:text-sm"
+            onClick={() => window.location.href = '/projects'}
+          >
+            <span className="relative z-10 flex items-center space-x-2">
+              <span>Upcoming Projects</span>
+              <span className="group-hover:translate-x-1 transition-transform duration-300">→</span>
+            </span>
+            <div className="absolute inset-0 bg-white/20 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          </button>
         </div>
         
       </div>

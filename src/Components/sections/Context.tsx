@@ -170,42 +170,6 @@ const Context = () => {
                 </motion.div>
               ))}
             </div>
-
-            {/* Call to Action */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={isInView ? { opacity: 1, scale: 1 } : {}}
-              transition={{ duration: 0.6, delay: 1 }}
-              className="text-center lg:text-left"
-            >
-              <a href="/mission">
-                <motion.button
-                  whileHover={{ 
-                    scale: 1.05,
-                    boxShadow: '0 10px 40px rgba(34, 197, 94, 0.4)'
-                  }}
-                  whileTap={{ scale: 0.95 }}
-                  className="group relative px-8 py-4 bg-gradient-to-r from-green-600 to-emerald-600 text-white font-bold text-lg rounded-full overflow-hidden"
-                >
-                  <span className="relative z-10 flex items-center space-x-2">
-                    <span>🌍</span>
-                    <span>Join Our Movement</span>
-                    <motion.span
-                      className="group-hover:translate-x-1 transition-transform"
-                      whileHover={{ x: 5 }}
-                    >
-                      →
-                    </motion.span>
-                  </span>
-                  <motion.div
-                    className="absolute inset-0 bg-gradient-to-r from-green-400 to-emerald-400"
-                    initial={{ x: "-100%" }}
-                    whileHover={{ x: "0%" }}
-                    transition={{ duration: 0.3 }}
-                  />
-                </motion.button>
-              </a>
-            </motion.div>
           </motion.div>
 
           {/* Image Section with 3D Effects */}
@@ -240,29 +204,7 @@ const Context = () => {
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 40vw"
                   onLoad={() => setIsLoaded(true)}
                 />
-                
-                {/* Overlay with stats */}
-                <motion.div
-                  className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/80 to-transparent z-20"
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={isLoaded ? { opacity: 1, y: 0 } : {}}
-                  transition={{ delay: 0.8 }}
-                >
-                  <div className="flex justify-between items-center text-white">
-                    <div className="space-y-1">
-                      <div className="text-2xl font-bold text-green-400">500+</div>
-                      <div className="text-sm opacity-90">Trees Planted</div>
-                    </div>
-                    <div className="space-y-1">
-                      <div className="text-2xl font-bold text-blue-400">50+</div>
-                      <div className="text-sm opacity-90">Campaigns</div>
-                    </div>
-                    <div className="space-y-1">
-                      <div className="text-2xl font-bold text-yellow-400">1000+</div>
-                      <div className="text-sm opacity-90">Students</div>
-                    </div>
-                  </div>
-                </motion.div>
+
               </div>
             </motion.div>
           </motion.div>

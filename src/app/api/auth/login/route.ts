@@ -71,11 +71,11 @@ export async function POST(request: NextRequest) {
     // Set cookie
     const cookieStore = await cookies();
     cookieStore.set('auth-token', token, {
-      httpOnly: true,
-      secure: process.env.NODE_ENV === 'production',
-      sameSite: 'lax',
-      maxAge: 7 * 24 * 60 * 60, // 7 days
-      path: '/',
+  httpOnly: true,
+  secure: process.env.NODE_ENV === 'production',
+  sameSite: 'lax',
+  maxAge: 20 * 60, // 20 minutes
+  path: '/',
     });
 
     return NextResponse.json({

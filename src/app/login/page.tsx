@@ -111,7 +111,9 @@ const LoginPage = () => {
               <FiLogIn className="text-white text-2xl" />
             </motion.div>
             <h1 className="text-3xl font-bold text-white">Welcome Back</h1>
-            <p className="text-gray-300 mt-2">Sign in to Green Club Dashboard</p>
+                      <p className="text-gray-400 text-center mb-8">
+            Sign in to access the Green Club Dashboard
+          </p>
           </div>
 
           {/* Error Message */}

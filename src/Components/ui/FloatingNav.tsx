@@ -25,11 +25,12 @@ export const FloatingNav = ({ navItems, className }: {
   }, []);
 
   const navItemIcons = {
-    "About": "🌱",
-    "Gallery": "🌿",
-    "Team": "🌳",
-    "Login": "🔑",
-    "Contact": "📞"
+    "About": "",
+    "Gallery": "",
+    "Projects": "",
+    "Team": "",
+    "Login": "",
+    "Contact": ""
   };
 
   return (

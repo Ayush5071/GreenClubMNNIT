@@ -382,8 +382,15 @@ const Dashboard = () => {
               <span className="text-xs sm:text-sm text-gray-400 whitespace-nowrap">Welcome, {user?.name}</span>
             </div>
             <div className="flex items-center space-x-2 sm:space-x-4">
-              <span className="text-xs sm:text-sm text-gray-300 bg-green-600/20 px-2 sm:px-3 py-1 rounded-full border border-green-600/30">
-                {user?.role}
+              <span className={`text-xs sm:text-sm font-medium px-2 sm:px-3 py-1 rounded-full border ${
+                user?.role === 'admin' 
+                  ? 'text-red-300 bg-red-600/20 border-red-600/30' 
+                  : 'text-green-300 bg-green-600/20 border-green-600/30'
+              }`}>
+                {user?.role === 'admin' ? '👑 Admin' : '👤 Member'}
+              </span>
+              <span className="text-xs text-gray-500">
+                {user?.email}
               </span>
               <button
                 onClick={handleLogout}

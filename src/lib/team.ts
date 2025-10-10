@@ -324,7 +324,8 @@ const secondYears = [
     thirdYears,    // Current final years
     secondYears,   // Current third years  
     alumni,      // Current second years
-    headCoordinators
+    headCoordinators,
+    secondYears as freshers  // Export secondYears as freshers for backward compatibility
   };
   
   // Year mapping for the new classification system

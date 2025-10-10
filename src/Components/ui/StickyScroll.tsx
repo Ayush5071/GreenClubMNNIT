@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState, useMemo } from "react";
 import { useMotionValueEvent, useScroll } from "framer-motion";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
@@ -39,10 +39,10 @@ export const StickyScroll = ({
   });
 
   // Gradient transitions: Start at zinc-950, move to zinc-800, and back to zinc-950
-  const linearGradients = [
+  const linearGradients = useMemo(() => [
     "linear-gradient(to bottom right, var(--zinc-950), var(--zinc-800))",
     "linear-gradient(to bottom right, var(--zinc-800), var(--zinc-950))",
-  ];
+  ], []);
 
   const [backgroundGradient, setBackgroundGradient] = useState(
     linearGradients[0]
@@ -51,7 +51,7 @@ export const StickyScroll = ({
   useEffect(() => {
     // Rotate through the gradients based on the active card
     setBackgroundGradient(linearGradients[activeCard % linearGradients.length]);
-  }, [activeCard]);
+  }, [activeCard, linearGradients]);
 
   return (
     <motion.div

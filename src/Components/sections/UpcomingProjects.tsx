@@ -129,7 +129,7 @@ const UpcomingProjects = () => {
             </h2>
           </div>
           <p className="text-gray-300 text-lg max-w-3xl mx-auto leading-relaxed">
-            Discover the <span className="text-green-400 font-semibold">innovative sustainability projects</span> we're 
+            Discover the <span className="text-green-400 font-semibold">innovative sustainability projects</span> we&apos;re 
             developing to create a greener campus and promote environmental awareness through technology.
           </p>
           <div className="mt-6 w-24 h-1 bg-gradient-to-r from-green-400 to-emerald-400 mx-auto rounded-full"></div>

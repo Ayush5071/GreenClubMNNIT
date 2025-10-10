@@ -1,4 +1,4 @@
-const freshers = [
+const secondYears = [
     {
       name: "Nisha",
       linkedin: "https://www.linkedin.com/in/nisha-jatav-ba103732",
@@ -121,170 +121,157 @@ const freshers = [
     }
   ];
 
-  const secondYears = [
+  const thirdYears = [
+
     {
       name: "Ayush Tiwari",
       linkedin: "https://www.linkedin.com/in/ayush-tiwari-84a823281/",
       instagram: "ayushtiwari5071",
-      team: "Web Team",
+  team: "Web Team Coordinator",
       drive: "/profile/second/ayush.jpg"
     },
-    {
-      name: "Akshat jain",
-      linkedin: "https://www.linkedin.com/in/akshat-jain-431704285/?originalSubdomain=in",
-      instagram: "ayushtiwari5071",
-      team: "Web Team",
-      drive: "/profile/second/akshat.jpg"
+        {
+        name: "Manashvi Sewal",
+        linkedin: "https://www.linkedin.com/in/manashvi-sewal-0b1666322",
+        instagram: "",
+  team: "Web Team Coordinator",
+        drive: "/profile/second/manashvi.webp"
     },
     {
       name: "Abhavya Mishra",
       linkedin: "https://www.linkedin.com/in/abhavya-mishra-66a1ba311/",
       instagram: "abhavya_mish/",
-      team: "Content Team",
+  team: "Social Media and Volunteering Coordinator",
       drive: "/profile/second/abhavya.webp"
-    },
-    {
-      name: "Jai Verma",
-      linkedin: "https://www.linkedin.com/in/jai-verma-8b09272b6?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-      instagram: "jai_v5794/profilecard/?igsh=bGIya3o4dGJyM2N1",
-      team: "Core and Social Media",
-      drive: "/profile/second/jai.webp"
-    },
-    {
-      name: "Yash Nayak",
-      linkedin: "https://www.linkedin.com/in/yash-n-8372a8288?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-      instagram: "yash.nahhyk/profilecard/?igsh=MTFtcmZhZWF2MHQ2OA==",
-      team: "Web Team",
-      drive: "/profile/second/yash.webp"
-  },
-  {
-    name: "Dushyant Verma",
-    linkedin: "https://www.linkedin.com/in/dushyant-verma-6a84b12ba?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-    instagram: "vermadushyant250/profilecard/?igsh=eDllbHdwcWZnaXE2",
-    team: "Core and Social Media",
-    drive: "/profile/second/dushyant.webp"
-  },
-    {
-        name: "Manashvi Sewal",
-        linkedin: "https://www.linkedin.com/in/manashvi-sewal-0b1666322",
-        instagram: "",
-        team: "Web Team",
-        drive: "/profile/second/manashvi.webp"
-    },
-    {
-      name: "Krishna Raj Agrawal",
-      linkedin: "www.linkedin.com/in/krishnarajagrawal",
-      instagram: "peeakaabooo/",
-      team: "Core and Social Media",
-      drive: "/profile/second/krishna.webp"
     },
     {
       name: "Abhishek Kumar Singh",
       linkedin: "https://www.linkedin.com/abhishek-kumar-singh-a661a5318",
       instagram: "",
-      team: "Core and Social Media",
+  team: "Social Media and Volunteering Coordinator",
       drive: "/profile/second/abhishek.jpg"
     },
     {
-      name: "Shanti Priya",
-      linkedin: "linkedin.com/in/shantipriya-jha-ab65222b5",
-      instagram: "shantipriy_a10?igsh=MTRxZ3h5YTA0bTNodA==&utm_source=ig_contact_invite",
-      team: "Content Team",
-      drive: "/profile/second/shantipriya.webp"
+      name: "Akshat jain",
+      linkedin: "https://www.linkedin.com/in/akshat-jain-431704285/?originalSubdomain=in",
+      instagram: "ayushtiwari5071",
+  team: "Social Media and Volunteering Coordinator",
+      drive: "/profile/second/akshat.jpg"
     },
+      {
+    name: "Dushyant Verma",
+    linkedin: "https://www.linkedin.com/in/dushyant-verma-6a84b12ba?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+    instagram: "vermadushyant250/profilecard/?igsh=eDllbHdwcWZnaXE2",
+  team: "Social Media and Volunteering Coordinator",
+    drive: "/profile/second/dushyant.webp"
+  },
+
     {
-      name: "Priyanshu Kumar Gupta",
-      linkedin: "https://www.linkedin.com/in/priyanshu-kumar-b11924278/",
-      instagram: "",
-      team: "Design and Web Team",
-      drive: "/profile/second/priyanshu.jpg"
+      name: "Jai Verma",
+      linkedin: "https://www.linkedin.com/in/jai-verma-8b09272b6?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+      instagram: "jai_v5794/profilecard/?igsh=bGIya3o4dGJyM2N1",
+  team: "Social Media and Volunteering Coordinator",
+      drive: "/profile/second/jai.webp"
     },
+        {
+      name: "Krishna Raj Agrawal",
+      linkedin: "www.linkedin.com/in/krishnarajagrawal",
+      instagram: "peeakaabooo/",
+  team: "Social Media and Volunteering Coordinator",
+      drive: "/profile/second/krishna.webp"
+    },
+      {
+    name: "Priyanshu Gupta",
+    linkedin: "https://www.linkedin.com/in/priyanshu-kumar-b11924278/",
+    team: "Design Team Coordinator",
+    drive: "/profile/second/priyanshu.jpg"
+  },
     {
-      name: "Puli Laxmi Vennela",
-      linkedin: "https://www.linkedin.com/in/laxmi-vennela-puli-b41939341",
-      instagram: "",
-      team: "Core and Social Media",
-      drive: "/profile/second/venella.jpg"
-    },
+      name: "Yash Nayak",
+      linkedin: "https://www.linkedin.com/in/yash-n-8372a8288?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+      instagram: "yash.nahhyk/profilecard/?igsh=MTFtcmZhZWF2MHQ2OA==",
+  team: "Social Media and Volunteering Coordinator",
+      drive: "/profile/second/yash.webp"
+  },
 
   ];
   
-  const thirdYears = [
-    {
-        name: "Nitin Arya",
-        linkedin: "https://www.linkedin.com/in/nitin-arya-a26610255?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-        instagram: "__nitinarya",
-        team: "Core team and web team",
-        drive: "/profile/third/nitin.webp"
-    },
+  const finalYears = [
+  {
+    name: "Nitin Arya",
+    linkedin: "https://www.linkedin.com/in/nitin-arya-a26610255?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+    instagram: "__nitinarya",
+    team: "Head Coordinator",
+    drive: "/profile/third/nitin.webp"
+  },
     {
       name: "Satyendra Singh Yadav",
       linkedin: "www.linkedin.com/in/ardneytas",
       instagram: "ardneytas.sp/",
-      team: "Design Team",
+      team: "Coordinator",
       drive: "/profile/third/satyendre.webp"
     },
     {
       name: "Mohammad Anish",
       linkedin: "https://www.linkedin.com/in/mohammad-anish-0543b0316/",
       instagram: "iam.anish1",
-      team: "Design Team",
+      team: "Coordinator",
       drive: "/profile/third/anish.webp"
     },
     {
       name: "Shivansh Pandey",
       linkedin: "https://www.linkedin.com/in/shivansh005",
       instagram: "i_am_shivansh_10",
-      team: "Volunteer",
+      team: "Coordinator",
       drive: "/profile/third/shivansh.webp"
     },
     {
       name: "Vivek Kumar Saroj",
       linkedin: "www.linkedin.com/in/vivek221117",
       instagram: "Vivekumar9026",
-      team: "Web Team",
+      team: "Coordinator",
       drive: "/profile/third/vivek.webp"
     },
     {
       name: "Aakarsh Kumar",
       linkedin: "www.linkedin.com/in/aakarshkumar05",
       instagram: "aakarsh__05",
-      team: "Video Editing Team",
+      team: "Coordinator",
       drive: "/profile/third/akarsh.jpg"
     },
     {
       name: "Manish Kumar",
       linkedin: "https://www.linkedin.com/in/manish-kumar-4831162ab/",
       instagram: "elegance_manisth_4121",
-      team: "Content Team",
+      team: "Coordinator",
       drive: "/profile/third/manish.webp"
     },
     {
       name: "Shivangi Verma",
       linkedin: "https://www.linkedin.com/in/shivangi-verma-288366282?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
       instagram: "risha_verma12",
-      team: "Web Team",
+      team: "Coordinator",
       drive: "/profile/third/shivangi.webp"
     },
     {
       name: "Tanisha Jhalani",
       linkedin:"https://www.linkedin.com/in/tanisha-jhalani-10263a258/?originalSubdomain=in",
       instagram: "ambitious_2029",
-      team: "Core and Social media",
+      team: "Coordinator",
       drive: "/profile/third/Tanisha.jpg"
     },
     {
       name: "Ghan Shyam",
       linkedin: "https://www.linkedin.com/in/ghan-shyam-858400295",
       instagram: "ghanshyam _thakur05",
-      team: "Core Team",
+      team: "Coordinator",
       drive: "/profile/third/Ghan.jpg"
     },
     {
       name: "Kommareddy Likith Krishnasai",
       linkedin: "https://www.linkedin.com/in/likith-krishnasai-kommareddy-b4203025a/?originalSubdomain=in",
       instagram: "",
-      team: "Web Team",
+      team: "Coordinator",
       drive: "/profile/third/likith.jpg"
     }
   ];
@@ -299,7 +286,7 @@ const freshers = [
 
   ];
 
-  const finalYears = [
+  const alumni = [
       {
         name: "Snehashish Datta",
         linkedin: "https://www.linkedin.com/in/snehashish-datta-2003s/",
@@ -336,15 +323,15 @@ const freshers = [
     finalYears,    // Alumni (graduated members)
     thirdYears,    // Current final years
     secondYears,   // Current third years  
-    freshers,      // Current second years
+    alumni,      // Current second years
     headCoordinators
   };
   
   // Year mapping for the new classification system
   export const yearMapping = {
-    alumni: finalYears,        // These are now alumni (graduated)
-    finalYears: thirdYears,    // Third years become final years
-    thirdYears: secondYears,   // Second years become third years
-    secondYears: freshers,     // Freshers become second years
+    alumni: alumni,        // These are now alumni (graduated)
+    finalYears: finalYears,    // Third years become final years
+    thirdYears: thirdYears,   // Second years become third years
+    secondYears: secondYears,     // Freshers become second years
     headCoordinators: headCoordinators
   };

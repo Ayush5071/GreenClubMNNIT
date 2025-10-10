@@ -5,7 +5,8 @@ import { motion, AnimatePresence } from "framer-motion";
 import { FiUsers, FiFilter, FiSearch, FiChevronDown, FiLinkedin, FiInstagram, FiArrowLeft, FiUser } from "react-icons/fi";
 import Link from "next/link";
 import Image from "next/image";
-import { finalYears, freshers, secondYears, thirdYears, headCoordinators, yearMapping } from "@/lib/team";
+import { finalYears,alumni, thirdYears, headCoordinators, yearMapping } from "@/lib/team";
+import CustomFooter from "@/Components/sections/CustomFooter";
 
 // Define interfaces for type safety
 interface TeamMember {
@@ -20,7 +21,7 @@ interface TeamData {
   alumni: TeamMember[];
   finalYears: TeamMember[];
   thirdYears: TeamMember[];
-  secondYears: TeamMember[];
+  // secondYears: TeamMember[];
   headCoordinators: TeamMember[];
 }
 
@@ -297,18 +298,18 @@ const TeamsPage = () => {
     alumni: yearMapping.alumni,
     finalYears: yearMapping.finalYears,
     thirdYears: yearMapping.thirdYears,
-    secondYears: yearMapping.secondYears,
+  // secondYears: yearMapping.secondYears,
     headCoordinators: yearMapping.headCoordinators
   }), []);
 
-  // Get all unique teams for filtering
-  const allTeams = useMemo(() => {
-    const teams = new Set<string>();
-    Object.values(teamData).flat().forEach(member => {
-      teams.add(member.team);
-    });
-    return Array.from(teams).sort();
-  }, [teamData]);
+  // Use only the new teams for filtering
+  const allTeams = [
+    'Web Team Coordinator',
+    'Social Media and Volunteering Coordinator',
+    'Design Team Coordinator',
+    'Head Coordinator',
+    'Coordinator'
+  ];
 
   // Filter and search logic
   const filteredMembers = useMemo(() => {
@@ -320,7 +321,7 @@ const TeamsPage = () => {
         ...teamData.headCoordinators.map(member => ({ member, year: 'Head Coordinator' })),
         ...teamData.finalYears.map(member => ({ member, year: 'Final Year' })),
         ...teamData.thirdYears.map(member => ({ member, year: 'Third Year' })),
-        ...teamData.secondYears.map(member => ({ member, year: 'Second Year' }))
+  // ...teamData.secondYears.map(member => ({ member, year: 'Second Year' }))
         // Alumni excluded from default view
       ];
     } else {
@@ -329,7 +330,7 @@ const TeamsPage = () => {
         'alumni': { members: teamData.alumni, yearLabel: 'Alumni' },
         'final': { members: teamData.finalYears, yearLabel: 'Final Year' },
         'third': { members: teamData.thirdYears, yearLabel: 'Third Year' },
-        'second': { members: teamData.secondYears, yearLabel: 'Second Year' }
+  // 'second': { members: teamData.secondYears, yearLabel: 'Second Year' }
       };
       
       if (yearMap[selectedYear]) {
@@ -460,7 +461,7 @@ const TeamsPage = () => {
                       transition={{ duration: 0.2 }}
                       className="absolute top-full mt-2 left-0 bg-gray-800/95 backdrop-blur-xl border border-gray-700/50 rounded-2xl shadow-2xl z-[1000] min-w-full overflow-hidden"
                     >
-                      {['all', 'head', 'alumni', 'final', 'third', 'second'].map((year) => (
+                      {['all', 'head', 'alumni', 'final', 'third'].map((year) => (
                         <button
                           key={year}
                           onClick={() => {
@@ -470,10 +471,10 @@ const TeamsPage = () => {
                           className="block w-full text-left px-6 py-3 hover:bg-gray-700/50 text-white transition-all duration-200 font-medium hover:text-green-400 first:rounded-t-2xl last:rounded-b-2xl"
                         >
                           {year === 'all' ? 'All Years' : 
-                           year === 'head' ? 'Head Coordinators' :
+                           year === 'head' ? 'Head Coordinator' :
                            year === 'alumni' ? 'Alumni' :
                            year === 'final' ? 'Final Year' :
-                           year === 'third' ? 'Third Year' : 'Second Year'}
+                           year === 'third' ? 'Third Year' : ''}
                         </button>
                       ))}
                     </motion.div>
@@ -617,6 +618,8 @@ const TeamsPage = () => {
           </motion.div>
         )}
       </div>
+
+      <CustomFooter />
     </div>
   );
 };

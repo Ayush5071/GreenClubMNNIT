@@ -6,7 +6,7 @@ const CustomFooter = () => (
       <span>
         Made with <span className="text-red-500">♥</span> by
         <a
-          href="https://ayushtiwari.vercel.app/"
+          href="https://ayush-delta.vercel.app/"
           target="_blank"
           rel="noopener noreferrer"
           className="text-green-400 hover:underline ml-1"

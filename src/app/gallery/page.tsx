@@ -129,13 +129,15 @@ function Gallery() {
     >
       <div className="relative overflow-hidden rounded-xl bg-gradient-to-br from-gray-900/50 to-gray-800/50 backdrop-blur-sm border border-gray-700/30 group-hover:border-green-400/50 transition-all duration-300 shadow-lg group-hover:shadow-green-500/20">
         {/* Image */}
-        <img
+        <Image
           src={image.src}
           alt={`Gallery image ${index + 1}`}
+          width={600}
+          height={400}
           loading="lazy"
-          onLoad={e => e.currentTarget.classList.add('loaded')}
           style={{
             width: '100%',
+            height: 'auto',
             display: 'block',
             borderRadius: '0.75rem',
             transition: 'all 0.3s ease',

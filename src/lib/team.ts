@@ -334,6 +334,13 @@ const secondYears = [
   team: "Social Media and Volunteering Coordinator",
       drive: "/profile/second/akshat.jpg"
     },
+    {
+      name: "Aman Goyal",
+      linkedin: "https://www.linkedin.com/in/",
+      instagram: "",
+  team: "Social Media and Volunteering Coordinator",
+      drive: "/profile/second/amangoyal.JPG"
+    },
       {
     name: "Dushyant Verma",
     linkedin: "https://www.linkedin.com/in/dushyant-verma-6a84b12ba?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",

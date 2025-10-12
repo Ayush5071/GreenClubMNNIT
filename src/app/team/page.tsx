@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { FiUsers, FiFilter, FiSearch, FiChevronDown, FiLinkedin, FiInstagram, FiArrowLeft, FiUser } from "react-icons/fi";
 import Link from "next/link";
 import Image from "next/image";
-import { finalYears,alumni, thirdYears, headCoordinators, yearMapping } from "@/lib/team";
+import { finalYears,alumni, thirdYears, headCoordinators, secondYears,yearMapping } from "@/lib/team";
 import CustomFooter from "@/Components/sections/CustomFooter";
 
 // Define interfaces for type safety
@@ -21,7 +21,7 @@ interface TeamData {
   alumni: TeamMember[];
   finalYears: TeamMember[];
   thirdYears: TeamMember[];
-  // secondYears: TeamMember[];
+  secondYears: TeamMember[];
   headCoordinators: TeamMember[];
 }
 
@@ -53,236 +53,121 @@ const TeamMemberCard = React.memo(({ member, year }: { member: TeamMember; year:
     initial={{ opacity: 0, y: 20 }}
     animate={{ opacity: 1, y: 0 }}
     exit={{ opacity: 0, y: -20 }}
-    whileHover={{ 
-      y: -8,
-      rotateY: 3,
-      rotateX: 3,
-      scale: 1.02
-    }}
-    transition={{ 
-      type: "spring", 
-      stiffness: 300,
-      damping: 20
-    }}
+    whileHover={{ y: -8, rotateY: 3, rotateX: 3, scale: 1.02 }}
+    transition={{ type: "spring", stiffness: 300, damping: 20 }}
     className="relative group h-full perspective-1000"
     style={{ transformStyle: "preserve-3d" }}
   >
-    <div className={`relative h-full ${year === 'Second Year' ? 'min-h-[200px]' : 'min-h-[320px]'} bg-gradient-to-br from-gray-900/95 via-gray-800/95 to-gray-900/95 backdrop-blur-xl rounded-2xl border border-gray-700/50 overflow-hidden shadow-xl group-hover:shadow-green-500/20 transition-all duration-500`}>
-      {/* Animated Background Effect */}
+    <div className="relative h-full min-h-[320px] bg-gradient-to-br from-gray-900/95 via-gray-800/95 to-gray-900/95 backdrop-blur-xl rounded-2xl border border-gray-700/50 overflow-hidden shadow-xl group-hover:shadow-green-500/20 transition-all duration-500">
+
+      {/* Animated Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-green-500/5 via-transparent to-emerald-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-      
+
       {/* Glowing Border */}
       <div className="absolute inset-0 rounded-2xl border-2 border-green-400/0 group-hover:border-green-400/20 transition-all duration-500" />
-      
-      {/* 3D Grid Pattern Background */}
+
+      {/* Grid Pattern */}
       <div className="absolute inset-0 opacity-10 group-hover:opacity-20 transition-opacity duration-500">
-        <div className="absolute inset-0 bg-[url('/Elements/grid.png')] bg-[length:30px_30px] bg-center transform-3d-grid" />
+        <div className="absolute inset-0 bg-[url('/Elements/grid.png')] bg-[length:30px_30px] bg-center" />
       </div>
-      
-      {/* Profile Image Section - Only show for non-second year members */}
-      {year !== 'Second Year' && (
-        <div className="relative p-6 pb-3">
-          <motion.div 
-            className="relative mx-auto w-24 h-24 md:w-28 md:h-28"
-            whileHover={{ 
-              scale: 1.1,
-              rotateY: 10,
-              rotateX: 5
-            }}
-            transition={{ type: "spring", stiffness: 400 }}
-          >
-            {/* Glow Effect */}
-            <motion.div 
-              className="absolute inset-0 rounded-xl bg-gradient-to-r from-green-400 to-emerald-400 opacity-0 group-hover:opacity-20 blur-lg transition-all duration-500"
-              animate={{
-                scale: [1, 1.1, 1],
-                opacity: [0.1, 0.2, 0.1]
-              }}
-              transition={{
-                duration: 3,
-                repeat: Infinity,
-                ease: "easeInOut"
-              }}
-            />
-            
-            {/* Image Container */}
-            <div className="relative w-full h-full rounded-xl overflow-hidden border-2 border-gray-600/40 group-hover:border-green-400/50 transition-all duration-500 shadow-xl">
-              <OptimizedImage
-                src={member.drive || (member.name.toLowerCase().includes('female') ? '/profile/girl.webp' : '/profile/boy.webp')}
-                alt={member.name}
-                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-              />
-              
-              {/* Overlay Gradient */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              
-              {/* Floating Particles */}
-              <div className="absolute inset-0 pointer-events-none">
-                {[...Array(3)].map((_, i) => (
-                  <motion.div
-                    key={i}
-                    className="absolute w-1 h-1 bg-green-400 rounded-full opacity-0 group-hover:opacity-60"
-                    initial={{ opacity: 0, scale: 0 }}
-                    animate={{
-                      opacity: [0, 0.6, 0],
-                      scale: [0, 1, 0],
-                      x: [0, Math.random() * 100 - 50],
-                      y: [0, Math.random() * 100 - 50]
-                    }}
-                    transition={{
-                      duration: 2,
-                      repeat: Infinity,
-                      delay: i * 0.7
-                    }}
-                    style={{
-                      left: `${20 + i * 30}%`,
-                      top: `${20 + i * 20}%`
-                    }}
-                  />
-                ))}
-              </div>
-            </div>
-            
-            {/* Year Badge */}
-            <motion.div 
-              className="absolute -bottom-2 -right-2 z-10"
-              whileHover={{ scale: 1.1 }}
-            >
-              <div className="px-2 py-1 bg-gradient-to-r from-green-600 to-emerald-600 text-white text-xs font-bold rounded-full shadow-lg border border-green-400/30 group-hover:from-green-500 group-hover:to-emerald-500 transition-all duration-300">
-                {year.split(' ')[0]}
-              </div>
-            </motion.div>
-          </motion.div>
-        </div>
-      )}
 
-      {/* Content Section */}
-      <div className={`relative z-10 ${year === 'Second Year' ? 'px-4 py-6 h-full flex flex-col justify-center items-center text-center space-y-3' : 'px-6 pb-6 space-y-3'}`}>
-        {/* Professional Icon for Second Year Cards */}
-        {year === 'Second Year' && (
-          <motion.div
-            className="flex items-center justify-center w-12 h-12 bg-gradient-to-br from-green-600/20 to-emerald-600/20 rounded-xl border border-green-500/30 group-hover:border-green-400/50 transition-all duration-300"
-            whileHover={{ 
-              scale: 1.1,
-              rotate: 5,
-              y: -2
-            }}
-            transition={{ type: "spring", stiffness: 400 }}
-          >
-            <FiUser className="w-6 h-6 text-green-400 group-hover:text-green-300 transition-colors duration-300" />
-          </motion.div>
-        )}
-
-        {/* Name */}
-        <motion.div 
-          className={`${year === 'Second Year' ? 'space-y-2' : 'text-center space-y-2'}`}
-          whileHover={{ y: -1 }}
+      {/* Profile Image */}
+      <div className="relative p-6 pb-3">
+        <motion.div
+          className="relative mx-auto w-24 h-24 md:w-28 md:h-28"
+          whileHover={{ scale: 1.1, rotateY: 10, rotateX: 5 }}
+          transition={{ type: "spring", stiffness: 400 }}
         >
-          <h3 className={`font-bold text-white group-hover:text-green-300 transition-colors duration-300 leading-tight ${year === 'Second Year' ? 'text-sm md:text-base' : 'text-lg md:text-xl'}`}>
+          <motion.div
+            className="absolute inset-0 rounded-xl bg-gradient-to-r from-green-400 to-emerald-400 opacity-0 group-hover:opacity-20 blur-lg transition-all duration-500"
+            animate={{ scale: [1, 1.1, 1], opacity: [0.1, 0.2, 0.1] }}
+            transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+          />
+          <div className="relative w-full h-full rounded-xl overflow-hidden border-2 border-gray-600/40 group-hover:border-green-400/50 transition-all duration-500 shadow-xl">
+            <OptimizedImage
+              src={
+                member.drive ||
+                (member.name.toLowerCase().includes("female")
+                  ? "/profile/girl.webp"
+                  : "/profile/boy.webp")
+              }
+              alt={member.name}
+              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+          </div>
+
+          {/* Year Badge */}
+          <motion.div
+            className="absolute -bottom-2 -right-2 z-10"
+            whileHover={{ scale: 1.1 }}
+          >
+            <div className="px-2 py-1 bg-gradient-to-r from-green-600 to-emerald-600 text-white text-xs font-bold rounded-full shadow-lg border border-green-400/30 group-hover:from-green-500 group-hover:to-emerald-500 transition-all duration-300">
+              {year.split(" ")[0]}
+            </div>
+          </motion.div>
+        </motion.div>
+      </div>
+
+      {/* Name, Role, and Socials */}
+      <div className="relative z-10 px-6 pb-6 space-y-3 text-center flex flex-col justify-center items-center">
+        <motion.div className="space-y-2" whileHover={{ y: -1 }}>
+          <h3 className="font-bold text-white text-lg md:text-xl group-hover:text-green-300 transition-colors duration-300 leading-tight">
             {member.name}
           </h3>
           {member.team && (
-            <motion.p 
-              className={`text-gray-400 font-medium bg-gray-800/50 rounded-lg border border-gray-700/50 inline-block group-hover:bg-gray-700/50 group-hover:border-green-500/30 group-hover:text-green-200 transition-all duration-300 ${year === 'Second Year' ? 'text-xs px-2 py-1' : 'text-sm px-3 py-2'}`}
+            <motion.p
+              className="text-gray-400 font-medium bg-gray-800/50 rounded-lg border border-gray-700/50 inline-block px-3 py-2 group-hover:bg-gray-700/50 group-hover:border-green-500/30 group-hover:text-green-200 transition-all duration-300 text-sm"
               whileHover={{ scale: 1.05 }}
             >
               {member.team}
             </motion.p>
           )}
-          {/* Year Badge for Second Year (since they don't have image badge) */}
-          {year === 'Second Year' && (
-            <motion.div 
-              className="px-2 py-1 bg-gradient-to-r from-green-600 to-emerald-600 text-white text-xs font-bold rounded-full shadow-lg border border-green-400/30 group-hover:from-green-500 group-hover:to-emerald-500 transition-all duration-300 inline-block"
-              whileHover={{ scale: 1.05, y: -1 }}
-            >
-              2nd Year
-            </motion.div>
-          )}
         </motion.div>
 
         {/* Social Links */}
-        <div className={`flex justify-center ${year === 'Second Year' ? 'pt-1 space-x-2' : 'pt-3 space-x-3'}`}>
+        <div className="flex justify-center pt-3 space-x-3">
           {member.linkedin && (
             <motion.a
-              href={member.linkedin.startsWith('http') ? member.linkedin : `https://${member.linkedin}`}
+              href={
+                member.linkedin.startsWith("http")
+                  ? member.linkedin
+                  : `https://${member.linkedin}`
+              }
               target="_blank"
               rel="noopener noreferrer"
               title={`${member.name}'s LinkedIn`}
-              whileHover={{ 
-                scale: 1.1, 
-                rotate: 5,
-                y: -2
-              }}
+              whileHover={{ scale: 1.1, rotate: 5, y: -2 }}
               whileTap={{ scale: 0.9 }}
-              className={`bg-gradient-to-r from-blue-600/30 to-blue-500/30 hover:from-blue-600/50 hover:to-blue-500/50 text-blue-300 rounded-lg transition-all duration-300 border border-blue-600/40 hover:border-blue-500/60 shadow-lg hover:shadow-blue-500/25 ${year === 'Second Year' ? 'p-1.5' : 'p-2.5'}`}
+              className="bg-gradient-to-r from-blue-600/30 to-blue-500/30 hover:from-blue-600/50 hover:to-blue-500/50 text-blue-300 rounded-lg transition-all duration-300 border border-blue-600/40 hover:border-blue-500/60 shadow-lg hover:shadow-blue-500/25 p-2.5"
             >
-              <FiLinkedin className={`${year === 'Second Year' ? 'w-3 h-3' : 'w-4 h-4'}`} />
+              <FiLinkedin className="w-4 h-4" />
             </motion.a>
           )}
           {member.instagram && (
             <motion.a
-              href={`https://instagram.com/${member.instagram.replace('@', '').replace('/', '')}`}
+              href={`https://instagram.com/${member.instagram.replace("@", "").replace("/", "")}`}
               target="_blank"
               rel="noopener noreferrer"
               title={`${member.name}'s Instagram`}
-              whileHover={{ 
-                scale: 1.1, 
-                rotate: -5,
-                y: -2
-              }}
+              whileHover={{ scale: 1.1, rotate: -5, y: -2 }}
               whileTap={{ scale: 0.9 }}
-              className={`bg-gradient-to-r from-pink-600/30 to-purple-600/30 hover:from-pink-600/50 hover:to-purple-600/50 text-pink-300 rounded-lg transition-all duration-300 border border-pink-600/40 hover:border-pink-500/60 shadow-lg hover:shadow-pink-500/25 ${year === 'Second Year' ? 'p-1.5' : 'p-2.5'}`}
+              className="bg-gradient-to-r from-pink-600/30 to-purple-600/30 hover:from-pink-600/50 hover:to-purple-600/50 text-pink-300 rounded-lg transition-all duration-300 border border-pink-600/40 hover:border-pink-500/60 shadow-lg hover:shadow-pink-500/25 p-2.5"
             >
-              <FiInstagram className={`${year === 'Second Year' ? 'w-3 h-3' : 'w-4 h-4'}`} />
+              <FiInstagram className="w-4 h-4" />
             </motion.a>
           )}
         </div>
       </div>
 
-      {/* Decorative 3D Elements */}
-      {year === 'Second Year' ? (
-        // Compact decorative elements for second year
-        <>
-          <div className="absolute top-3 right-3 w-1.5 h-1.5 bg-green-400 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-          <div className="absolute bottom-3 left-3 w-1 h-1 bg-emerald-400 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
-          <div className="absolute top-1/2 right-4 w-0.5 h-0.5 bg-green-300 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-900" />
-          {/* Cool floating mini particles */}
-          <div className="absolute inset-0 pointer-events-none">
-            {[...Array(2)].map((_, i) => (
-              <motion.div
-                key={i}
-                className="absolute w-0.5 h-0.5 bg-green-400 rounded-full opacity-0 group-hover:opacity-60"
-                initial={{ opacity: 0, scale: 0 }}
-                animate={{
-                  opacity: [0, 0.4, 0],
-                  scale: [0, 1, 0],
-                  x: [0, Math.random() * 30 - 15],
-                  y: [0, Math.random() * 20 - 10]
-                }}
-                transition={{
-                  duration: 1.2,
-                  repeat: Infinity,
-                  delay: i * 0.4
-                }}
-                style={{
-                  left: `${30 + i * 40}%`,
-                  top: `${30 + i * 20}%`
-                }}
-              />
-            ))}
-          </div>
-        </>
-      ) : (
-        // Regular decorative elements for other years
-        <>
-          <div className="absolute top-4 right-4 w-2.5 h-2.5 bg-green-400 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-          <div className="absolute bottom-4 left-4 w-1.5 h-1.5 bg-emerald-400 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
-          <div className="absolute top-1/2 left-3 w-1 h-1 bg-green-300 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-900" />
-        </>
-      )}
+      {/* Floating Decorative Elements */}
+      <div className="absolute top-4 right-4 w-2.5 h-2.5 bg-green-400 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+      <div className="absolute bottom-4 left-4 w-1.5 h-1.5 bg-emerald-400 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+      <div className="absolute top-1/2 left-3 w-1 h-1 bg-green-300 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-900" />
     </div>
   </motion.div>
 ));
+
 
 TeamMemberCard.displayName = 'TeamMemberCard';
 
@@ -298,6 +183,7 @@ const TeamsPage = () => {
     alumni: yearMapping.alumni,
     finalYears: yearMapping.finalYears,
     thirdYears: yearMapping.thirdYears,
+    secondYears: yearMapping.secondYears,
   // secondYears: yearMapping.secondYears,
     headCoordinators: yearMapping.headCoordinators
   }), []);
@@ -321,7 +207,7 @@ const TeamsPage = () => {
         ...teamData.headCoordinators.map(member => ({ member, year: 'Head Coordinator' })),
         ...teamData.finalYears.map(member => ({ member, year: 'Final Year' })),
         ...teamData.thirdYears.map(member => ({ member, year: 'Third Year' })),
-  // ...teamData.secondYears.map(member => ({ member, year: 'Second Year' }))
+        ...teamData.secondYears.map(member => ({ member, year: 'Second Year' }))
         // Alumni excluded from default view
       ];
     } else {
@@ -330,7 +216,7 @@ const TeamsPage = () => {
         'alumni': { members: teamData.alumni, yearLabel: 'Alumni' },
         'final': { members: teamData.finalYears, yearLabel: 'Final Year' },
         'third': { members: teamData.thirdYears, yearLabel: 'Third Year' },
-  // 'second': { members: teamData.secondYears, yearLabel: 'Second Year' }
+        'second': { members: teamData.secondYears, yearLabel: 'Second Year' }
       };
       
       if (yearMap[selectedYear]) {
@@ -461,7 +347,7 @@ const TeamsPage = () => {
                       transition={{ duration: 0.2 }}
                       className="absolute top-full mt-2 left-0 bg-gray-800/95 backdrop-blur-xl border border-gray-700/50 rounded-2xl shadow-2xl z-[1000] min-w-full overflow-hidden"
                     >
-                      {['all', 'head', 'alumni', 'final', 'third'].map((year) => (
+                      {['all', 'head', 'alumni', 'final', 'third', 'second'].map((year) => (
                         <button
                           key={year}
                           onClick={() => {
@@ -474,7 +360,10 @@ const TeamsPage = () => {
                            year === 'head' ? 'Head Coordinator' :
                            year === 'alumni' ? 'Alumni' :
                            year === 'final' ? 'Final Year' :
-                           year === 'third' ? 'Third Year' : ''}
+                           year === 'third' ? 'Third Year' : 
+                           year === 'second' ?  'Second Year': ''
+                          }
+
                         </button>
                       ))}
                     </motion.div>

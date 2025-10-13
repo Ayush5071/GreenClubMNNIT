@@ -1,5 +1,4 @@
 import Scroller from "@/Components/scroller/scroller";
-import About from "@/Components/sections/About";
 import Contact from "@/Components/sections/Contact";
 import Context from "@/Components/sections/Context";
 import Footer from "@/Components/sections/Footer";
@@ -9,7 +8,7 @@ import { Testimonials } from "@/Components/sections/Testimonials";
 import UpcomingProjects from "@/Components/sections/UpcomingProjects";
 import { FloatingNav } from "@/Components/ui/FloatingNav";
 import { navItems } from "@/lib/data/data";
-import Image from "next/image";
+
 
 export default function Home() {  return (
     <div className="relative w-full h-full overflow-hidden bg-zinc-950 notallow">

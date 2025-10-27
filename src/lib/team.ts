@@ -1,3 +1,126 @@
+/*
+const secondYears = [
+    {
+      name: "Nisha",
+      linkedin: "https://www.linkedin.com/in/nisha-jatav-ba103732",
+      team: "Media Team"
+    },
+    {
+      name: "Dhairya Vishwakarma",
+      linkedin: "www.linkedin.com/in/dhairya-vishwakarma",
+      team: "Media Team"
+    },
+    {
+      name: "Ruchita",
+      linkedin: "https://www.linkedin.com/in/ruchita-rr-577040323",
+      team: "Core and Social Media"
+    },
+    {
+      name: "Ayush Shrivastava",
+      linkedin: "https://www.linkedin.com/in/ayush-shrivastava2505",
+      team: "Web Team"
+    },
+    {
+      name: "Ishaan",
+      linkedin: "https://www.linkedin.com/in/ishaan-undefined-051795295",
+      team: "Content Team"
+    },
+    {
+      name: "Anmol Kumar",
+      linkedin: "https://www.linkedin.com/in/anmol-kumar-87289a31b",
+      team: "Core and Social Media"
+    },
+    {
+      name: "Shivansh Pandey",
+      linkedin: "www.linkedin.com/in/shivansh-pandey-b73911341",
+      team: "Content Team"
+    },
+    {
+      name: "Shiva Jadaun",
+      linkedin: "https://www.linkedin.com/in/shiva-jadaun-38707831b",
+      team: "Media Team"
+    },
+    {
+      name: "Saurabh Meena",
+      linkedin: "https://www.linkedin.com/in/saurabh-meena-120b60239",
+      team: "Core and Social Media"
+    },
+    {
+      name: "Ayush Sekhani",
+      linkedin: "https://www.linkedin.com/in/ayush-sekhani-b66b66331?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+      team: "Design Team"
+    },
+    {
+      name: "Dipan Mandal",
+      linkedin: "https://www.linkedin.com/in/dipan-mandal-",
+      team: "Core and Social Media"
+    },
+    {
+      name: "Bhaskar Mishra",
+      linkedin: "www.linkedin.com/in/hybhaskarmishra",
+      team: "WebD Team"
+    },
+    {
+      name: "Aditya Yadav",
+      linkedin: "https://www.linkedin.com/in/aditya-yadav-bb5552310",
+      team: "Design Team"
+    },
+    {
+      name: "Shrey Gupta",
+      linkedin: "https://www.linkedin.com/in/shrey-gupta-71aa59331?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+      team: "Media Team"
+    },
+    {
+      name: "Ayush Agarwal",
+      linkedin: "https://www.linkedin.com/in/ayush-agarwal-9491b7272",
+      team: "Core and Social Media"
+    },
+    {
+      name: "Satyam Soni",
+      linkedin: "https://www.linkedin.com/in/satyam-soni-00122b320?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+      team: "Design Team"
+    },
+    {
+      name: "Khushi Gupta",
+      linkedin: "www.linkedin.com/in/khushi-gupta0206",
+      team: "Core and Social Media"
+    },
+    {
+      name: "Ananya Shrivastava",
+      linkedin: "https://www.linkedin.com/in/ananya-shrivastava-84354a329?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+      team: "Content Team"
+    },
+    {
+      name: "Arabhay Agrawal",
+      linkedin: "https://www.linkedin.com/in/arabhay-agrawal-638901326",
+      team: "Core and Social Media"
+    },
+    {
+      name: "Abhay Agrahari",
+      linkedin: "https://www.linkedin.com/in/abhay-agrahari-73714831b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+      team: "Web Team"
+    },
+    {
+      name: "Siddhant Roy",
+      linkedin: "https://www.linkedin.com/in/siddhant-roy-475682326/",
+      team: "Media Team"
+    },
+    {
+      name: "Rishil Shakya",
+      linkedin: "https://www.linkedin.com/in/rishil-shakya-41b223332",
+      team: "Core and Social Media"
+    },
+    {
+      name: "Pranav Ranjan",
+      linkedin: "https://www.linkedin.com/in/pranav-ranjan-80307a2b4/",
+      team: "Media Team"
+    },
+    {
+      name: "Deepak Kumar Maurya",
+      linkedin: "https://www.linkedin.com/in/deepak-kumar-maurya-b80300334",
+      team: "Core and Social Media"
+    }
+  ];   */
   const secondYears = [
     {
     name: "Vaishnavi Pal",
@@ -197,20 +320,6 @@
   team: "Social Media and Volunteering Coordinator",
       drive: "/profile/second/abhavya.webp"
     },
-{
-      name: "Vivek Singh",
-      linkedin: "https://www.linkedin.com/in/vivek-singh-kashinwar?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-      instagram: "vivek_singh_1_8/",
-  team: "Social Media and Volunteering Coordinator",
-      drive: "/profile/second/vivek.png"
-    },{
-      name: "Yagesh Jha",
-      linkedin: "https://www.linkedin.com/in/yagesh-jha-mnnit?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-      instagram: "yash__2718/",
-  team: "Social Media and Volunteering Coordinator",
-      drive: "/profile/second/yagesh.png"
-    },
-
     {
       name: "Abhishek Kumar Singh",
       linkedin: "https://www.linkedin.com/abhishek-kumar-singh-a661a5318",
